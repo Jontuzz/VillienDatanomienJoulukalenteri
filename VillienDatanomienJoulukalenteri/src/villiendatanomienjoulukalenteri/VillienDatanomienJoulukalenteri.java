@@ -23,6 +23,8 @@ public class VillienDatanomienJoulukalenteri extends Application {
         
         Scene scene = new Scene(root);
         
+        //scene.getStylesheets().add(VillienDatanomienJoulukalenteri.class.getResource("JouluKalenteri.css").toExternalForm());
+        
         stage.setScene(scene);
         stage.show();
     }
