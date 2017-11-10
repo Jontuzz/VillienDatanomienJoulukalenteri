@@ -16,117 +16,117 @@
             <Font name="Arial Bold" size="24.0" />
          </font></Button>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Button fx:id="luuku2" layoutX="510.0" layoutY="421.0" text="2">
+      <Button fx:id="luukku2" layoutX="510.0" layoutY="421.0" text="2">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button2" layoutX="802.0" layoutY="166.0" onAction="#handleButtonAction" text="3">
+      <Button fx:id="luukku3" layoutX="802.0" layoutY="166.0" onAction="#handleButtonAction" text="3">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button3" layoutX="848.0" layoutY="271.0" onAction="#handleButtonAction" text="4">
+      <Button fx:id="luukku4" layoutX="848.0" layoutY="271.0" onAction="#handleButtonAction" text="4">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button4" layoutX="736.0" layoutY="69.0" onAction="#handleButtonAction" text="5">
+      <Button fx:id="luukku5" layoutX="736.0" layoutY="69.0" onAction="#handleButtonAction" text="5">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button5" layoutX="655.0" layoutY="153.0" onAction="#handleButtonAction" text="6">
+      <Button fx:id="luukku6" layoutX="655.0" layoutY="153.0" onAction="#handleButtonAction" text="6">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button6" layoutX="571.0" layoutY="36.0" onAction="#handleButtonAction" text="7">
+      <Button fx:id="luukku7" layoutX="571.0" layoutY="36.0" onAction="#handleButtonAction" text="7">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button7" layoutX="518.0" layoutY="271.0" onAction="#handleButtonAction" text="8">
+      <Button fx:id="luukku8" layoutX="518.0" layoutY="271.0" onAction="#handleButtonAction" text="8">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button8" layoutX="51.0" layoutY="69.0" onAction="#handleButtonAction" text="9">
+      <Button fx:id="luukku9" layoutX="51.0" layoutY="69.0" onAction="#handleButtonAction" text="9">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button81" layoutX="389.0" layoutY="451.0" onAction="#handleButtonAction" text="10">
+      <Button fx:id="luukku10" layoutX="389.0" layoutY="451.0" onAction="#handleButtonAction" text="10">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button82" layoutX="389.0" layoutY="341.0" onAction="#handleButtonAction" text="11">
+      <Button fx:id="luukku11" layoutX="389.0" layoutY="341.0" onAction="#handleButtonAction" text="11">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button83" layoutX="196.0" layoutY="356.0" onAction="#handleButtonAction" text="12">
+      <Button fx:id="luukku12" layoutX="196.0" layoutY="356.0" onAction="#handleButtonAction" text="12">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button84" layoutX="58.0" layoutY="393.0" onAction="#handleButtonAction" text="13">
+      <Button fx:id="luukku13" layoutX="58.0" layoutY="393.0" onAction="#handleButtonAction" text="13">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button85" layoutX="753.0" layoutY="384.0" onAction="#handleButtonAction" text="14">
+      <Button fx:id="luukku14" layoutX="753.0" layoutY="384.0" onAction="#handleButtonAction" text="14">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button86" layoutX="389.0" layoutY="48.0" onAction="#handleButtonAction" text="15">
+      <Button fx:id="luukku15" layoutX="389.0" layoutY="48.0" onAction="#handleButtonAction" text="15">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button87" layoutX="685.0" layoutY="271.0" onAction="#handleButtonAction" text="16">
+      <Button fx:id="luukku16" layoutX="685.0" layoutY="271.0" onAction="#handleButtonAction" text="16">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button88" layoutX="626.0" layoutY="363.0" onAction="#handleButtonAction" text="17">
+      <Button fx:id="luukku17" layoutX="626.0" layoutY="363.0" onAction="#handleButtonAction" text="17">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button89" layoutX="87.0" layoutY="166.0" onAction="#handleButtonAction" text="18">
+      <Button fx:id="luukku18" layoutX="87.0" layoutY="166.0" onAction="#handleButtonAction" text="18">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button810" layoutX="182.0" layoutY="36.0" onAction="#handleButtonAction" text="19">
+      <Button fx:id="luukku19" layoutX="182.0" layoutY="36.0" onAction="#handleButtonAction" text="19">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button811" layoutX="281.0" layoutY="107.0" onAction="#handleButtonAction" text="20">
+      <Button fx:id="luukku20" layoutX="281.0" layoutY="107.0" onAction="#handleButtonAction" text="20">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button812" layoutX="205.0" layoutY="228.0" onAction="#handleButtonAction" text="21">
+      <Button fx:id="luukku21" layoutX="205.0" layoutY="228.0" onAction="#handleButtonAction" text="21">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button813" layoutX="88.0" layoutY="271.0" onAction="#handleButtonAction" text="22">
+      <Button fx:id="luukku22" layoutX="88.0" layoutY="271.0" onAction="#handleButtonAction" text="22">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button814" layoutX="310.0" layoutY="188.0" onAction="#handleButtonAction" text="23">
+      <Button fx:id="luukku23" layoutX="310.0" layoutY="188.0" onAction="#handleButtonAction" text="23">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="button815" layoutX="466.0" layoutY="166.0" onAction="#handleButtonAction" text="24">
+      <Button fx:id="luukku24" layoutX="466.0" layoutY="166.0" onAction="#handleButtonAction" text="24">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
