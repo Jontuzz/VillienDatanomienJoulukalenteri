@@ -15,11 +15,11 @@ import java.util.ArrayList;
  * @author s1601378
  */
 public class Tiedostonkasittelija {
-
-    public ArrayList<String> lueTiedosto(String tiedosto) {
+    
+    public ArrayList<String> lueLuukkujenSisallot() {
         ArrayList<String> rivit = new ArrayList<>();
         try {
-            Files.lines(Paths.get(tiedosto)).forEach(rivi -> rivit.add(rivi));
+            Files.lines(Paths.get("luukkujenSisallot.txt")).forEach(rivi -> rivit.add(rivi));
         } catch (IOException e) {
             System.out.println("Lukeminen epäonnistui. Virhe: " + e.getMessage());
         }
