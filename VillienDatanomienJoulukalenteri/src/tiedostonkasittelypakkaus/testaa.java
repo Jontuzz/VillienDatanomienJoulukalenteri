@@ -10,5 +10,9 @@ package tiedostonkasittelypakkaus;
  * @author s1601378
  */
 public class testaa {
-    
+    public static void main(String[] args) {
+        Tiedostonkasittelija kasittelija = new Tiedostonkasittelija();
+        
+        System.out.println(kasittelija.lueTiedosto("luukkujenSisallot.txt"));
+    }
 }
