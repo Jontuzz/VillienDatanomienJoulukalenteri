@@ -95,7 +95,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     private Button luukku24;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleHaeLuukunSisalto(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
