@@ -9,15 +9,23 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+import luukku.*;
 
 /**
  *
  * @author s1601378
  */
 public class VillienDatanomienJoulukalenteriController implements Initializable {
+    
+    LuukkuFXMLController luukkuFXMLController = new LuukkuFXMLController();
     
     @FXML
     private Label label;
@@ -98,6 +106,19 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     private void handleHaeLuukunSisalto(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
+                
+        try {
+            Stage luukunSisalto = new Stage();
+
+            Parent root = FXMLLoader.load(getClass().getResource("/luukku/luukkuFXML.fxml"));
+
+            Scene scene = new Scene(root);
+            luukunSisalto.setScene(scene);
+            luukunSisalto.setTitle("Luukku 1");
+            luukunSisalto.setResizable(false);
+            luukunSisalto.show();
+        } catch (Exception e) {
+        }
     }
     
     @Override

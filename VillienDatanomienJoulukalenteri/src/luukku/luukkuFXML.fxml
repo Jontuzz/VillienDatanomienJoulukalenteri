@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="960.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="luukku.LuukkuFXMLController">
+    <stylesheets>
+        <URL value="@luukkufxml.css" />
+    </stylesheets>
+   <children>
+      <WebView layoutX="3.0" layoutY="1.0" prefHeight="540.0" prefWidth="960.0" />
+   </children>
+</AnchorPane>
