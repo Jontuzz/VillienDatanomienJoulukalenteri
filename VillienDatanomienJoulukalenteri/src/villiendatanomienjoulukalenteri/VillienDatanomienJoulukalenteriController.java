@@ -19,11 +19,7 @@ import javafx.scene.control.Label;
  * @author s1601378
  */
 public class VillienDatanomienJoulukalenteriController implements Initializable {
-    
-    
-    @FXML
-    private Label label;
-    
+        
     @FXML
     private Button luukku1;
     
@@ -97,11 +93,123 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     private Button luukku24;
     
     @FXML
-    private void handleHaeLuukunSisalto(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-                
-        
+    private void avaaLuukku1(ActionEvent event) {
+        System.out.println("Avasit luukun numero 1.");
+    }
+    
+    @FXML
+    private void avaaLuukku2(ActionEvent event) {
+        System.out.println("Avasit luukun numero 2.");
+    }
+    
+    @FXML
+    private void avaaLuukku3(ActionEvent event) {
+        System.out.println("Avasit luukun numero 3.");
+    }
+    
+    @FXML
+    private void avaaLuukku4(ActionEvent event) {
+        System.out.println("Avasit luukun numero 4.");
+    }
+    
+    @FXML
+    private void avaaLuukku5(ActionEvent event) {
+        System.out.println("Avasit luukun numero 5.");
+    }
+    
+    @FXML
+    private void avaaLuukku6(ActionEvent event) {
+        System.out.println("Avasit luukun numero 6.");
+    }
+    
+    @FXML
+    private void avaaLuukku7(ActionEvent event) {
+        System.out.println("Avasit luukun numero 7.");
+    }
+    
+    @FXML
+    private void avaaLuukku8(ActionEvent event) {
+        System.out.println("Avasit luukun numero 8.");
+    }
+    
+    @FXML
+    private void avaaLuukku9(ActionEvent event) {
+        System.out.println("Avasit luukun numero 9.");
+    }
+    
+    @FXML
+    private void avaaLuukku10(ActionEvent event) {
+        System.out.println("Avasit luukun numero 10.");
+    }
+    
+    @FXML
+    private void avaaLuukku11(ActionEvent event) {
+        System.out.println("Avasit luukun numero 11.");
+    }
+    
+    @FXML
+    private void avaaLuukku12(ActionEvent event) {
+        System.out.println("Avasit luukun numero 12.");
+    }
+    
+    @FXML
+    private void avaaLuukku13(ActionEvent event) {
+        System.out.println("Avasit luukun numero 13.");
+    }
+    
+    @FXML
+    private void avaaLuukku14(ActionEvent event) {
+        System.out.println("Avasit luukun numero 14.");
+    }
+    
+    @FXML
+    private void avaaLuukku15(ActionEvent event) {
+        System.out.println("Avasit luukun numero 15.");
+    }
+    
+    @FXML
+    private void avaaLuukku16(ActionEvent event) {
+        System.out.println("Avasit luukun numero 16.");
+    }
+    
+    @FXML
+    private void avaaLuukku17(ActionEvent event) {
+        System.out.println("Avasit luukun numero 17.");
+    }
+    
+    @FXML
+    private void avaaLuukku18(ActionEvent event) {
+        System.out.println("Avasit luukun numero 18.");
+    }
+    
+    @FXML
+    private void avaaLuukku19(ActionEvent event) {
+        System.out.println("Avasit luukun numero 19.");
+    }
+    
+    @FXML
+    private void avaaLuukku20(ActionEvent event) {
+        System.out.println("Avasit luukun numero 20.");
+    }
+    
+    @FXML
+    private void avaaLuukku21(ActionEvent event) {
+        System.out.println("Avasit luukun numero 21.");
+    }
+    
+    @FXML
+    private void avaaLuukku22(ActionEvent event) {
+        System.out.println("Avasit luukun numero 22.");
+    }
+    
+    @FXML
+    private void avaaLuukku23(ActionEvent event) {
+        System.out.println("Avasit luukun numero 23.");
+    }
+    
+    @FXML
+    private void avaaLuukku24(ActionEvent event) {
+        System.out.println("Avasit luukun numero 24.");
     }
     
     @Override
