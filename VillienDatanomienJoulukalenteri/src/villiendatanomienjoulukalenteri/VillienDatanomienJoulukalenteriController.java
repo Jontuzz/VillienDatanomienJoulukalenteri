@@ -10,16 +10,17 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
+import tiedostonkasittelypakkaus.Luukkujenkasittelija;
 /**
  *
  * @author s1601378
  */
 public class VillienDatanomienJoulukalenteriController implements Initializable {
         
+    Luukkujenkasittelija luukkujenKasittelija = new Luukkujenkasittelija();
+    
     @FXML
     private Button luukku1;
     
@@ -92,124 +93,157 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     @FXML
     private Button luukku24;
     
+    //Luukkujen avaus metodit alkaa
     @FXML
     private void avaaLuukku1(ActionEvent event) {
-        System.out.println("Avasit luukun numero 1.");
+        
+        
+        if (luukkujenKasittelija.tarkistaOnkoLuukkuAvattu("1.12.2017")) {
+            //avataan luukun sisältö
+            System.out.println("Avasit luukun numero 1.");
+        } else {
+            //Kirjoitetaan avatutLuukut.txt tiedostoon ja avataan luukun sissältö.
+            luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("1.12.2017");
+            System.out.println("Avataan...");
+        }
     }
     
     @FXML
     private void avaaLuukku2(ActionEvent event) {
         System.out.println("Avasit luukun numero 2.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("2.12.2017");
     }
     
     @FXML
     private void avaaLuukku3(ActionEvent event) {
         System.out.println("Avasit luukun numero 3.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("3.12.2017");
     }
     
     @FXML
     private void avaaLuukku4(ActionEvent event) {
         System.out.println("Avasit luukun numero 4.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("4.12.2017");
     }
     
     @FXML
     private void avaaLuukku5(ActionEvent event) {
         System.out.println("Avasit luukun numero 5.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("5.12.2017");
     }
     
     @FXML
     private void avaaLuukku6(ActionEvent event) {
         System.out.println("Avasit luukun numero 6.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("6.12.2017");
     }
     
     @FXML
     private void avaaLuukku7(ActionEvent event) {
         System.out.println("Avasit luukun numero 7.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("7.12.2017");
     }
     
     @FXML
     private void avaaLuukku8(ActionEvent event) {
         System.out.println("Avasit luukun numero 8.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("8.12.2017");
     }
     
     @FXML
     private void avaaLuukku9(ActionEvent event) {
         System.out.println("Avasit luukun numero 9.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("9.12.2017");
     }
     
     @FXML
     private void avaaLuukku10(ActionEvent event) {
         System.out.println("Avasit luukun numero 10.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("10.12.2017");
     }
     
     @FXML
     private void avaaLuukku11(ActionEvent event) {
         System.out.println("Avasit luukun numero 11.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("11.12.2017");
     }
     
     @FXML
     private void avaaLuukku12(ActionEvent event) {
         System.out.println("Avasit luukun numero 12.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("12.12.2017");
     }
     
     @FXML
     private void avaaLuukku13(ActionEvent event) {
         System.out.println("Avasit luukun numero 13.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("13.12.2017");
     }
     
     @FXML
     private void avaaLuukku14(ActionEvent event) {
         System.out.println("Avasit luukun numero 14.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("14.12.2017");
     }
     
     @FXML
     private void avaaLuukku15(ActionEvent event) {
         System.out.println("Avasit luukun numero 15.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("15.12.2017");
     }
     
     @FXML
     private void avaaLuukku16(ActionEvent event) {
         System.out.println("Avasit luukun numero 16.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("16.12.2017");
     }
     
     @FXML
     private void avaaLuukku17(ActionEvent event) {
         System.out.println("Avasit luukun numero 17.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("17.12.2017");
     }
     
     @FXML
     private void avaaLuukku18(ActionEvent event) {
         System.out.println("Avasit luukun numero 18.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("18.12.2017");
     }
     
     @FXML
     private void avaaLuukku19(ActionEvent event) {
         System.out.println("Avasit luukun numero 19.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("19.12.2017");
     }
     
     @FXML
     private void avaaLuukku20(ActionEvent event) {
         System.out.println("Avasit luukun numero 20.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("20.12.2017");
     }
     
     @FXML
     private void avaaLuukku21(ActionEvent event) {
         System.out.println("Avasit luukun numero 21.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("21.12.2017");
     }
     
     @FXML
     private void avaaLuukku22(ActionEvent event) {
         System.out.println("Avasit luukun numero 22.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("22.12.2017");
     }
     
     @FXML
     private void avaaLuukku23(ActionEvent event) {
         System.out.println("Avasit luukun numero 23.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("23.12.2017");
     }
     
     @FXML
     private void avaaLuukku24(ActionEvent event) {
         System.out.println("Avasit luukun numero 24.");
+        luukkujenKasittelija.kirjoitaAvattuLuukkuTiedostoon("24.12.2017");
     }
     
     @Override

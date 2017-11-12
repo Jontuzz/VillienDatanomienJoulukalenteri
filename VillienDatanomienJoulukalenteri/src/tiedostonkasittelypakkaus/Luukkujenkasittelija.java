@@ -16,31 +16,7 @@ import java.util.ArrayList;
  *
  * @author s1601378
  */
-public class Tiedostonkasittelija {
-    
-    public ArrayList<String> lueLuukkujenSisallot() {
-        ArrayList<String> rivit = new ArrayList<>();
-        try {
-            Files.lines(Paths.get("luukkujenSisallot.txt")).forEach(rivi -> rivit.add(rivi));
-        } catch (IOException e) {
-            System.out.println("Lukeminen epäonnistui. Virhe: " + e.getMessage());
-        }
-
-        return rivit;
-    }
-    
-    public ArrayList<String> lueAvatutLuukut() {
-        ArrayList<String> avatutLuukut = new ArrayList<>();
-        
-        try {
-            Files.lines(Paths.get("avatutLuukut.txt")).forEach(luukku -> avatutLuukut.add(luukku));
-        } catch (IOException e) {
-            System.out.println("Avattujen luukkujen hakeminen epäonnistui. Virhe: " + e.getMessage());
-        }
-        
-        return avatutLuukut;
-    }
-    
+public class Luukkujenkasittelija {
     
     // Tiedostoon kirjoitettaessa pitää merkkijonon olla listassa
     public void kirjoitaAvattuLuukkuTiedostoon(String paivays) {
@@ -63,4 +39,34 @@ public class Tiedostonkasittelija {
 
         return avatutLuukut;
     }
+    
+    private ArrayList<String> lueAvatutLuukut() {
+        ArrayList<String> avatutLuukut = new ArrayList<>();
+        
+        try {
+            Files.lines(Paths.get("avatutLuukut.txt")).forEach(luukku -> avatutLuukut.add(luukku));
+        } catch (IOException e) {
+            System.out.println("Avattujen luukkujen hakeminen epäonnistui. Virhe: " + e.getMessage());
+        }
+        
+        return avatutLuukut;
+    }
+
+    public boolean tarkistaOnkoLuukkuAvattu(String paivays) {
+        
+        return lueAvatutLuukut().contains(paivays);
+    }
+    
+    /*public ArrayList<String> lueLuukkujenSisallot() {
+        ArrayList<String> rivit = new ArrayList<>();
+        try {
+            Files.lines(Paths.get("luukkujenSisallot.txt")).forEach(rivi -> rivit.add(rivi));
+        } catch (IOException e) {
+            System.out.println("Lukeminen epäonnistui. Virhe: " + e.getMessage());
+        }
+
+        return rivit;
+    }*/
+    
+    
 }
