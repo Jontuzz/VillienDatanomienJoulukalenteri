@@ -11,3 +11,27 @@ and open the template in the editor.
 .root {
     -fx-background-image:url('file:/C:/Users/s1601378/Documents/NetBeansProjects/VillienDatanomienJoulukalenteri/winter.jpg');
 }
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-style: dotted;
+    -fx-border-width: 3px;
+    -fx-text-fill: white;
+    
+}
+
+.button:hover {
+    -fx-cursor: hand;
+}
+
+#ei-voida-avata {
+    -fx-border-color: red;
+}
+
+#ei-avattu {
+    -fx-border-color: white;
+}
+
+#avattu {
+    -fx-border-color: green;
+}

@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,122 +13,194 @@
     <children>
         <Button fx:id="luukku1" layoutX="837.0" layoutY="451.0" onAction="#avaaLuukku1" text="1">
          <font>
-            <Font name="Arial Bold" size="24.0" />
-         </font></Button>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect></Button>
       <Button fx:id="luukku2" layoutX="510.0" layoutY="421.0" onAction="#avaaLuukku2" text="2">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku3" layoutX="802.0" layoutY="166.0" onAction="#avaaLuukku3" text="3">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku4" layoutX="848.0" layoutY="271.0" onAction="#avaaLuukku4" text="4">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku5" layoutX="736.0" layoutY="69.0" onAction="#avaaLuukku5" text="5">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku6" layoutX="655.0" layoutY="153.0" onAction="#avaaLuukku6" text="6">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku7" layoutX="571.0" layoutY="36.0" onAction="#avaaLuukku7" text="7">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku8" layoutX="518.0" layoutY="271.0" onAction="#avaaLuukku8" text="8">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku9" layoutX="51.0" layoutY="69.0" onAction="#avaaLuukku9" text="9">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku10" layoutX="389.0" layoutY="451.0" onAction="#avaaLuukku10" text="10">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku11" layoutX="389.0" layoutY="341.0" onAction="#avaaLuukku11" text="11">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku12" layoutX="196.0" layoutY="356.0" onAction="#avaaLuukku12" text="12">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku13" layoutX="58.0" layoutY="393.0" onAction="#avaaLuukku13" text="13">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku14" layoutX="753.0" layoutY="384.0" onAction="#avaaLuukku14" text="14">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku15" layoutX="389.0" layoutY="48.0" onAction="#avaaLuukku15" text="15">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku16" layoutX="685.0" layoutY="271.0" onAction="#avaaLuukku16" text="16">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku17" layoutX="626.0" layoutY="363.0" onAction="#avaaLuukku17" text="17">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku18" layoutX="87.0" layoutY="166.0" onAction="#avaaLuukku18" text="18">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku19" layoutX="182.0" layoutY="36.0" onAction="#avaaLuukku19" text="19">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku20" layoutX="281.0" layoutY="107.0" onAction="#avaaLuukku20" text="20">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku21" layoutX="205.0" layoutY="228.0" onAction="#avaaLuukku21" text="21">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku22" layoutX="88.0" layoutY="271.0" onAction="#avaaLuukku22" text="22">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku23" layoutX="310.0" layoutY="188.0" onAction="#avaaLuukku23" text="23">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
       <Button fx:id="luukku24" layoutX="466.0" layoutY="166.0" onAction="#avaaLuukku24" text="24">
          <font>
-            <Font name="Arial Bold" size="24.0" />
+            <Font name="Arial Bold" size="30.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Button>
     </children>
 </AnchorPane>
