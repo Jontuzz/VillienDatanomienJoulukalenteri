@@ -9,8 +9,10 @@ package luukku;
  *
  * @author s1601378
  */
+
 public class luukku {
     
-    
-    
+    public luukku() {
+        
+    }    
 }
