@@ -21,6 +21,7 @@ public class VillienDatanomienJoulukalenteri extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("VillienDatanomienJoulukalenteriFXML.fxml"));
         
+        stage.setTitle("Villien Datanomien Joulukalenteri");
         Scene scene = new Scene(root);
         
         //scene.getStylesheets().add(VillienDatanomienJoulukalenteri.class.getResource("JouluKalenteri.css").toExternalForm());
