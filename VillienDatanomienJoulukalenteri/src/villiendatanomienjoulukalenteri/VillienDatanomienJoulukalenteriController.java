@@ -265,14 +265,25 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         // TODO
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
         luukku1.setId("ei-avattu");
-        
-        luukku14.setId("ei-voida-avata");
-        
-        luukku3.setId("avattu");
-        
-        luukku18.setId("avattu");
-        
-        luukku21.setId("ei-avattu");
-    }
 
+        luukku14.setId("ei-voida-avata");
+
+        luukku3.setId("avattu");
+
+        luukku18.setId("avattu");
+
+        luukku21.setId("ei-avattu");
+
+        //Päivämäärät tulee olla tässä muodossa
+        String date = "24/12/2017";
+        
+        //Muunnetaan String dateksi, jotta voimme myöhemmin vertailla.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date d = sdf.parse(date);
+            System.out.println(d);
+        } catch (ParseException ex) {
+            
+        }
+    }
 }
