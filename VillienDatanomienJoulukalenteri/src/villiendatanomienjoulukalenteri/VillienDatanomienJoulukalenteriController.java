@@ -6,8 +6,6 @@
 package villiendatanomienjoulukalenteri;
 
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 import tiedostonkasittelypakkaus.Luukkujenkasittelija;
+import paivamaara.tarkistaPaivays;
 
 /**
  *
@@ -25,7 +24,7 @@ import tiedostonkasittelypakkaus.Luukkujenkasittelija;
  */
 public class VillienDatanomienJoulukalenteriController implements Initializable {
 
-    Luukkujenkasittelija luukkujenKasittelija = new Luukkujenkasittelija();
+    private Luukkujenkasittelija luukkujenKasittelija = new Luukkujenkasittelija();
 
     @FXML
     private Button luukku1;
@@ -99,7 +98,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     @FXML
     private Button luukku24;
 
-    private Map<Button, String> buttonit = new HashMap<>();
+    private Map<Button, Date> buttonit = new HashMap<>();
 
     //Luukkujen avaus metodit alkaa
     @FXML
@@ -258,6 +257,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
+
         luukku1.setId("ei-avattu");
 
         luukku14.setId("ei-voida-avata");
@@ -267,17 +267,5 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         luukku18.setId("avattu");
 
         luukku21.setId("ei-avattu");
-
-        //Päivämäärät tulee olla tässä muodossa
-        String date = "24/12/2017";
-        
-        //Muunnetaan String dateksi, jotta voimme myöhemmin vertailla.
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            Date d = sdf.parse(date);
-            System.out.println(d);
-        } catch (ParseException ex) {
-            
-        }
     }
 }
