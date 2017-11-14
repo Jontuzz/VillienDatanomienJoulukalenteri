@@ -23,7 +23,7 @@ public class Luukkujenkasittelija {
         lisaaTiedostoon(merkkijonoListana(paivays));
     }
     
-    //Kirjoittaa listan merkkijonoon
+    //Kirjoittaa listan sisältämät merkkijonot tiedostoon
     public void lisaaTiedostoon(ArrayList<String> rivit) {
         try {
             Files.write(Paths.get("avatutLuukut.txt"), rivit, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
@@ -40,6 +40,7 @@ public class Luukkujenkasittelija {
         return avatutLuukut;
     }
     
+    //Luetaan avatutLuukut.txt tiedoston rivit ja lisätään ne ArrayListaan. Palautetaan avatutLuukut ArrayList metodin kutsujalle.
     private ArrayList<String> lueAvatutLuukut() {
         ArrayList<String> avatutLuukut = new ArrayList<>();
         
@@ -54,19 +55,7 @@ public class Luukkujenkasittelija {
 
     public boolean tarkistaOnkoLuukkuAvattu(String paivays) {
         
+        //Kutsutaan lueAvatutLuukut metodia ja katsotaan sisältääkö palautettu ArrayList parametrina annetun String tyyppisen päivämäärän
         return lueAvatutLuukut().contains(paivays);
     }
-    
-    /*public ArrayList<String> lueLuukkujenSisallot() {
-        ArrayList<String> rivit = new ArrayList<>();
-        try {
-            Files.lines(Paths.get("luukkujenSisallot.txt")).forEach(rivi -> rivit.add(rivi));
-        } catch (IOException e) {
-            System.out.println("Lukeminen epäonnistui. Virhe: " + e.getMessage());
-        }
-
-        return rivit;
-    }*/
-    
-    
 }
