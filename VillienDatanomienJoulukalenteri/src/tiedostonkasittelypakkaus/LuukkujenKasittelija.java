@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jacksontest;
+package tiedostonkasittelypakkaus;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -25,7 +25,6 @@ import java.util.logging.Logger;
 public class LuukkujenKasittelija {
 
     private LinkedHashMap<String, Luukku> luukulista;
-    HandleJson json = new HandleJson();
 
     public LuukkujenKasittelija() {
         luukulista = new LinkedHashMap<>();
@@ -35,7 +34,7 @@ public class LuukkujenKasittelija {
 
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
-                luukulista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, json.parseDate("1/12/2017"), "Luukku" + luukkuNro));
+                luukulista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, .parseDate("1/12/2017"), "Luukku" + luukkuNro));
             }
 
             ObjectMapper mapper = new ObjectMapper();
