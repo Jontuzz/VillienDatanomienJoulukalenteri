@@ -15,7 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-import tiedostonkasittelypakkaus.Luukkujenkasittelija;
+import tiedostonkasittelypakkaus.LuukkujenkasittelijaTekstiTiedosto;
 import paivamaara.tarkistaPaivays;
 
 /**
@@ -24,7 +24,7 @@ import paivamaara.tarkistaPaivays;
  */
 public class VillienDatanomienJoulukalenteriController implements Initializable {
 
-    private Luukkujenkasittelija luukkujenKasittelija = new Luukkujenkasittelija();
+    private LuukkujenkasittelijaTekstiTiedosto luukkujenKasittelija = new LuukkujenkasittelijaTekstiTiedosto();
 
     @FXML
     private Button luukku1;

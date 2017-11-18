@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author s1601378
  */
-public class Luukkujenkasittelija {
+public class LuukkujenkasittelijaTekstiTiedosto {
     
     // Tiedostoon kirjoitettaessa pitää merkkijonon olla listassa
     public void kirjoitaAvattuLuukkuTiedostoon(String paivays) {

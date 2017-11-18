@@ -11,7 +11,7 @@ package tiedostonkasittelypakkaus;
  */
 public class testaa {
     public static void main(String[] args) {
-        Luukkujenkasittelija kasittelija = new Luukkujenkasittelija();
+        LuukkujenkasittelijaTekstiTiedosto kasittelija = new LuukkujenkasittelijaTekstiTiedosto();
         //System.out.println(kasittelija.lueLuukkujenSisallot());
     }
 }
