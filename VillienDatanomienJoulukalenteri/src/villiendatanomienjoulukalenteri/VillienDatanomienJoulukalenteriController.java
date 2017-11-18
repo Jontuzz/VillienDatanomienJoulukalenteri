@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 import tiedostonkasittelypakkaus.LuukkujenkasittelijaTekstiTiedosto;
-import paivamaara.tarkistaPaivays;
+import paivamaara.TarkistaPaivays;
 
 /**
  *

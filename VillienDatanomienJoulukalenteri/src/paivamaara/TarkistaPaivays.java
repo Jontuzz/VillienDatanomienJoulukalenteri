@@ -13,12 +13,12 @@ import java.util.Date;
  *
  * @author s1601378
  */
-public class tarkistaPaivays {
+public class TarkistaPaivays {
     
-    public static Date parseDate(String paiva) {
+    public Date parseDate(String paiva) {
         //Päivämäärät tulee olla tässä muodossa
         //String date = "24/12/2017";
-        
+
         //Muunnetaan String dateksi, jotta voimme myöhemmin vertailla.
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
