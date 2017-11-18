@@ -8,8 +8,7 @@ package villiendatanomienjoulukalenteri;
 import java.io.File;
 import java.net.URL;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +24,7 @@ import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 public class VillienDatanomienJoulukalenteriController implements Initializable {
 
     private LuukkujenKasittelija kasittelija = new LuukkujenKasittelija();
+    private LinkedHashMap<String, Button> buttonit = new LinkedHashMap<>();
 
     @FXML
     private Button luukku1;
@@ -97,9 +97,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
 
     @FXML
     private Button luukku24;
-
-    private Map<Button, Date> buttonit = new HashMap<>();
-
+    
     //Luukkujen avaus metodit alkaa
     @FXML
     private void avaaLuukku1(ActionEvent event) {
@@ -226,6 +224,31 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         // TODO
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
 
+        buttonit.put("luukku1", luukku1);
+        buttonit.put("luukku2", luukku2);
+        buttonit.put("luukku3", luukku3);
+        buttonit.put("luukku4", luukku4);
+        buttonit.put("luukku5", luukku5);
+        buttonit.put("luukku6", luukku6);
+        buttonit.put("luukku7", luukku7);
+        buttonit.put("luukku8", luukku8);
+        buttonit.put("luukku9", luukku9);
+        buttonit.put("luukku10", luukku10);
+        buttonit.put("luukku11", luukku11);
+        buttonit.put("luukku12", luukku12);
+        buttonit.put("luukku13", luukku13);
+        buttonit.put("luukku14", luukku14);
+        buttonit.put("luukku15", luukku15);
+        buttonit.put("luukku16", luukku16);
+        buttonit.put("luukku17", luukku17);
+        buttonit.put("luukku18", luukku18);
+        buttonit.put("luukku19", luukku19);
+        buttonit.put("luukku20", luukku20);
+        buttonit.put("luukku21", luukku21);
+        buttonit.put("luukku22", luukku22);
+        buttonit.put("luukku23", luukku23);
+        buttonit.put("luukku24", luukku24);
+        
         luukku1.setId("ei-avattu");
 
         luukku14.setId("ei-voida-avata");
@@ -238,6 +261,9 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
+            
+            
+            
         } else {
             System.out.println(kasittelija.kirjoitaLuukutJsonTiedostoon());
         }
