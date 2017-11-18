@@ -59,7 +59,7 @@ public class LuukkujenKasittelija {
 
         LinkedHashMap<String, Luukku> result;
         try {
-            luukulista = mapper.readValue(new FileInputStream("luukkutesti.json"), LinkedHashMap.class);
+            luukulista = mapper.readValue(new FileInputStream("JouluKalenteriLuukut.json"), LinkedHashMap.class);
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {

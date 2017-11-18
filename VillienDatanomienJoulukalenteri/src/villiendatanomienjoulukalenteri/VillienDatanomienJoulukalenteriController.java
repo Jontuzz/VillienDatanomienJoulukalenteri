@@ -7,13 +7,15 @@ package villiendatanomienjoulukalenteri;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Date;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import tiedostonkasittelypakkaus.Luukku;
 
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 
@@ -97,7 +99,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
 
     @FXML
     private Button luukku24;
-    
+
     //Luukkujen avaus metodit alkaa
     @FXML
     private void avaaLuukku1(ActionEvent event) {
@@ -248,7 +250,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         buttonit.put("luukku22", luukku22);
         buttonit.put("luukku23", luukku23);
         buttonit.put("luukku24", luukku24);
-        
+
         luukku1.setId("ei-avattu");
 
         luukku14.setId("ei-voida-avata");
@@ -258,12 +260,13 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         luukku18.setId("avattu");
 
         luukku21.setId("ei-avattu");
+
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
+
             
-            
-            
+
         } else {
             System.out.println(kasittelija.kirjoitaLuukutJsonTiedostoon());
         }
