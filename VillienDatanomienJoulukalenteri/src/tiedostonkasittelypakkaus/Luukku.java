@@ -18,7 +18,7 @@ public class Luukku {
     private boolean avattu;
     private Date luukunPaivays;
     private String sisalto;
-
+  
     public Luukku(String nimi, int numero, boolean avattu, Date luukunPaivays, String sisalto) {
         this.nimi = nimi;
         this.numero = numero;
@@ -71,4 +71,8 @@ public class Luukku {
     public String toString() {
         return "Luukku{" + "nimi=" + nimi + ", numero=" + numero + ", avattu=" + avattu + ", luukunPaivays=" + luukunPaivays + ", sisalto=" + sisalto + '}';
     }
+
+    public Luukku() {
+    }
+    
 }

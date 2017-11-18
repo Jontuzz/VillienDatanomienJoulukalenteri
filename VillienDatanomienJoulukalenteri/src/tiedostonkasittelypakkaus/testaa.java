@@ -5,13 +5,20 @@
  */
 package tiedostonkasittelypakkaus;
 
+import java.util.Map;
+
 /**
  *
  * @author s1601378
  */
 public class testaa {
     public static void main(String[] args) {
-        LuukkujenkasittelijaTekstiTiedosto kasittelija = new LuukkujenkasittelijaTekstiTiedosto();
-        //System.out.println(kasittelija.lueLuukkujenSisallot());
+        LuukkujenKasittelija kasittelija = new LuukkujenKasittelija();
+        System.out.println(kasittelija.lueJsonListaan());
+        
+        for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
+            System.out.println(luukku.getValue().toString());
+            System.out.println("nimi: " + luukku.getValue().getNimi());
+        }
     }
 }

@@ -6,6 +6,7 @@
 package tiedostonkasittelypakkaus;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import paivamaara.TarkistaPaivays;
 /**
@@ -57,9 +59,9 @@ public class LuukkujenKasittelija {
     public LinkedHashMap<String, Luukku> lueJsonListaan() {
         ObjectMapper mapper = new ObjectMapper();
 
-        LinkedHashMap<String, Luukku> result;
+        LinkedHashMap<String, Luukku> result = null;
         try {
-            luukulista = mapper.readValue(new FileInputStream("JouluKalenteriLuukut.json"), LinkedHashMap.class);
+            result = mapper.readValue(new File("JouluKalenteriLuukut.json"), new TypeReference<Map<String, Luukku>>(){});
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
@@ -67,6 +69,6 @@ public class LuukkujenKasittelija {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return luukulista;
+        return result;
     }
 }

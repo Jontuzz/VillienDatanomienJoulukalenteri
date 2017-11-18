@@ -265,7 +265,10 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
 
-            
+            System.out.println(kasittelija.lueJsonListaan());
+//            for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
+//                System.out.println(luukku);
+//            }
 
         } else {
             System.out.println(kasittelija.kirjoitaLuukutJsonTiedostoon());
