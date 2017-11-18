@@ -237,9 +237,9 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         luukku21.setId("ei-avattu");
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
-            
+            System.out.println("Luukut on jo json tiedostossa!");
         } else {
-            
+            System.out.println(kasittelija.kirjoitaLuukutJsonTiedostoon());
         }
     }
 }
