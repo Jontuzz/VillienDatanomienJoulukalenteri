@@ -36,14 +36,14 @@ public class LuukkujenKasittelija {
 
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
-                luukulista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, paivayksenHallinta.parseDate(luukkuNro + "/12/2017"), "Hyvää Joulua!"));
+                luukulista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, paivayksenHallinta.parseDate(luukkuNro + "/11/2017"), "Hyvää Joulua!"));
             }
 
             ObjectMapper mapper = new ObjectMapper();
 
             ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
-            writer.writeValue(new File("JouluKalenteriLuukut.json"), luukulista);
+            writer.writeValue(new File("MarraskuuTesti.json"), luukulista);
             return true;
 
         } catch (JsonGenerationException e) {
@@ -61,7 +61,7 @@ public class LuukkujenKasittelija {
 
         LinkedHashMap<String, Luukku> result = null;
         try {
-            result = mapper.readValue(new File("JouluKalenteriLuukut.json"), new TypeReference<Map<String, Luukku>>(){});
+            result = mapper.readValue(new File("MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>(){});
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
