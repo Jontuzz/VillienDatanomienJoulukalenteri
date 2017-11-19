@@ -9,7 +9,7 @@
   "luukku2" : {
     "nimi" : "luukku2",
     "numero" : 2,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509573600000,
     "sisalto" : "Hyvää Joulua!"
   },
@@ -23,7 +23,7 @@
   "luukku4" : {
     "nimi" : "luukku4",
     "numero" : 4,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509746400000,
     "sisalto" : "Hyvää Joulua!"
   },

@@ -264,19 +264,16 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
 //
 //        luukku21.setId("ei-avattu");
 
-        kasittelija.kirjoitaLuukutJsonTiedostoon();
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
-
-            
-            
+  
             System.out.println(kasittelija.lueJsonListaan());
             for (Map.Entry<String, Button> buttonEntry : buttonit.entrySet()) {
                 
                 for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
                     //luukku on jo avattu
-                    if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().isAvattu() == true) {
+                    if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().isAvattu()) {
                         buttonEntry.getValue().setId("avattu");
                         //luukun päivä ennen nykyistä päivää ja luukun päivä sama kuin nykyinen päivä
                     } else if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().before(nykyinenPaiva) || buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().equals(nykyinenPaiva)) {
@@ -285,7 +282,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
                     } else if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().after(nykyinenPaiva)) {
                         buttonEntry.getValue().setId("ei-voida-avata");
                     } else {
-                        System.out.println("Miksi näin tapahtui?");
+                        System.out.println("Jotain meni pieleen!");
                     }
                 }
             }
