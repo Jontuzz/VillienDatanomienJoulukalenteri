@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -104,6 +106,16 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     //Luukkujen avaus metodit alkaa
     @FXML
     private void avaaLuukku1(ActionEvent event) {
+        if (kasittelija.voikoLuukunAvata("luukku1")) {
+            System.out.println("Avataan...");
+            try {
+                Thread.sleep(2000);
+                luukku1.setId("avattu");
+                System.out.println("Avattu");
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
         System.out.println("Avasit luukun numero 1.");
     }
 

@@ -12,8 +12,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -77,5 +77,16 @@ public class LuukkujenKasittelija {
         }
         //lukemisen onnistuessa palautetaan metodin kutsujalle json tiedostosta luetut luukut LinkedHashMapissä. Muuten tulostetaan error
         return result;
+    }
+    
+    public boolean voikoLuukunAvata(String luukunNimi) {
+        
+        Date luukunPaiva = lueJsonListaan().get(luukunNimi).getLuukunPaivays();
+        Date tamaPaiva = new Date();
+        
+        if (luukunPaiva.equals(tamaPaiva) || luukunPaiva.before(tamaPaiva)) {
+            return true;
+        }
+        return false;
     }
 }
