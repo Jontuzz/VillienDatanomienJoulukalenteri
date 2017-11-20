@@ -222,11 +222,13 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         System.out.println("Avasit luukun numero 24.");
     }
 
+    //Luukkujen avaus metodit loppuu
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
-
+        //lisätään napit listaan, jotta voidaan muuttaa nappien outline css tiedoston ja napin id:n avulla
         buttonit.add(luukku1);
         buttonit.add(luukku2);
         buttonit.add(luukku3);
@@ -252,6 +254,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         buttonit.add(luukku23);
         buttonit.add(luukku24);
         
+        //tarkistetaan onko tiedostoa "JouluKalenteriLuukut.json" olemassa
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
@@ -259,6 +262,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
             LinkedHashMap<String, Luukku> luukkuLista = kasittelija.lueJsonListaan();
             System.out.println(kasittelija.lueJsonListaan());
 
+            //käydään nappien lista läpi
             for (Button button : buttonit) {
 
                 Luukku luukku = luukkuLista.get(button.getId());
@@ -269,6 +273,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
                 } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
                     button.setId("ei-avattu");
                 } else {
+                    //luukut joiden päivämäärä on  nykyisen päivämäärän jälkeen
                     button.setId("ei-voida-avata");
                 }
             }

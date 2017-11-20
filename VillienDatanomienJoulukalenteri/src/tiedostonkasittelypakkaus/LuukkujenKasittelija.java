@@ -24,26 +24,31 @@ import paivamaara.TarkistaPaivays;
  */
 public class LuukkujenKasittelija {
 
-    private LinkedHashMap<String, Luukku> luukulista;
+    private LinkedHashMap<String, Luukku> luukkuLista;
     
     TarkistaPaivays paivayksenHallinta = new TarkistaPaivays();
     
     public LuukkujenKasittelija() {
-        luukulista = new LinkedHashMap<>();
+        luukkuLista = new LinkedHashMap<>();
     }
 
     public boolean kirjoitaLuukutJsonTiedostoon() {
-
+        /*Jos tiedostoa ei löydy tai tiedostoa on muokattu siten, että sen lukeminen aiheuttaa virheen
+            voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
+        */
+        
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
-                luukulista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, paivayksenHallinta.parseDate(luukkuNro + "/11/2017"), "Hyvää Joulua!"));
+                //lisätään jokainen luukku LinkedHashMappiin
+                luukkuLista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, paivayksenHallinta.parseDate(luukkuNro + "/11/2017"), "Hyvää Joulua!"));
             }
 
             ObjectMapper mapper = new ObjectMapper();
 
+            //DefaultPrettyPrinter määrittää, että Java oliot eivät tule yhteen pötköön json tiedostoon
             ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
-            writer.writeValue(new File("MarraskuuTesti.json"), luukulista);
+            writer.writeValue(new File("MarraskuuTesti.json"), luukkuLista);
             return true;
 
         } catch (JsonGenerationException e) {
@@ -60,6 +65,7 @@ public class LuukkujenKasittelija {
         ObjectMapper mapper = new ObjectMapper();
 
         LinkedHashMap<String, Luukku> result = null;
+        //Kokeillaan lukea json tiedostossa olevat luukut
         try {
             result = mapper.readValue(new File("MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>(){});
         } catch (JsonGenerationException e) {
@@ -69,6 +75,7 @@ public class LuukkujenKasittelija {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //lukemisen onnistuessa palautetaan metodin kutsujalle json tiedostosta luetut luukut LinkedHashMapissä. Muuten tulostetaan error
         return result;
     }
 }
