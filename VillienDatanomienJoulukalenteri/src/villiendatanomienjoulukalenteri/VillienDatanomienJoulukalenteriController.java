@@ -251,17 +251,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         buttonit.add(luukku22);
         buttonit.add(luukku23);
         buttonit.add(luukku24);
-
-//        System.out.println(buttonit);
-//        luukku1.setId("ei-avattu");
-//
-//        luukku14.setId("ei-voida-avata");
-//
-//        luukku3.setId("avattu");
-//
-//        luukku18.setId("avattu");
-//
-//        luukku21.setId("ei-avattu");
+        
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
