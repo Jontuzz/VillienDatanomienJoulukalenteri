@@ -7,9 +7,9 @@ package villiendatanomienjoulukalenteri;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,10 +26,9 @@ import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 public class VillienDatanomienJoulukalenteriController implements Initializable {
 
     private LuukkujenKasittelija kasittelija = new LuukkujenKasittelija();
-    private LinkedHashMap<String, Button> buttonit = new LinkedHashMap<>();
+    private ArrayList<Button> buttonit = new ArrayList<>();
     private Date nykyinenPaiva = new Date();
-    
-    
+
     @FXML
     private Button luukku1;
 
@@ -228,30 +227,30 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         // TODO
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
 
-        buttonit.put("luukku1", luukku1);
-        buttonit.put("luukku2", luukku2);
-        buttonit.put("luukku3", luukku3);
-        buttonit.put("luukku4", luukku4);
-        buttonit.put("luukku5", luukku5);
-        buttonit.put("luukku6", luukku6);
-        buttonit.put("luukku7", luukku7);
-        buttonit.put("luukku8", luukku8);
-        buttonit.put("luukku9", luukku9);
-        buttonit.put("luukku10", luukku10);
-        buttonit.put("luukku11", luukku11);
-        buttonit.put("luukku12", luukku12);
-        buttonit.put("luukku13", luukku13);
-        buttonit.put("luukku14", luukku14);
-        buttonit.put("luukku15", luukku15);
-        buttonit.put("luukku16", luukku16);
-        buttonit.put("luukku17", luukku17);
-        buttonit.put("luukku18", luukku18);
-        buttonit.put("luukku19", luukku19);
-        buttonit.put("luukku20", luukku20);
-        buttonit.put("luukku21", luukku21);
-        buttonit.put("luukku22", luukku22);
-        buttonit.put("luukku23", luukku23);
-        buttonit.put("luukku24", luukku24);
+        buttonit.add(luukku1);
+        buttonit.add(luukku2);
+        buttonit.add(luukku3);
+        buttonit.add(luukku4);
+        buttonit.add(luukku5);
+        buttonit.add(luukku6);
+        buttonit.add(luukku7);
+        buttonit.add(luukku8);
+        buttonit.add(luukku9);
+        buttonit.add(luukku10);
+        buttonit.add(luukku11);
+        buttonit.add(luukku12);
+        buttonit.add(luukku13);
+        buttonit.add(luukku14);
+        buttonit.add(luukku15);
+        buttonit.add(luukku16);
+        buttonit.add(luukku17);
+        buttonit.add(luukku18);
+        buttonit.add(luukku19);
+        buttonit.add(luukku20);
+        buttonit.add(luukku21);
+        buttonit.add(luukku22);
+        buttonit.add(luukku23);
+        buttonit.add(luukku24);
 
 //        System.out.println(buttonit);
 //        luukku1.setId("ei-avattu");
@@ -263,32 +262,26 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
 //        luukku18.setId("avattu");
 //
 //        luukku21.setId("ei-avattu");
-
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
-  
+
+            LinkedHashMap<String, Luukku> luukkuLista = kasittelija.lueJsonListaan();
             System.out.println(kasittelija.lueJsonListaan());
-            for (Map.Entry<String, Button> buttonEntry : buttonit.entrySet()) {
-                
-                for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
-                    //luukku on jo avattu
-                    if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().isAvattu()) {
-                        buttonEntry.getValue().setId("avattu");
-                        //luukun päivä ennen nykyistä päivää ja luukun päivä sama kuin nykyinen päivä
-                    } else if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().before(nykyinenPaiva) || buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().equals(nykyinenPaiva)) {
-                        buttonEntry.getValue().setId("ei-avattu");
-                        //luukun päivä nykyisen päivän jälkeen
-                    } else if (buttonEntry.getKey().equals(luukku.getValue().getNimi()) && luukku.getValue().getLuukunPaivays().after(nykyinenPaiva)) {
-                        buttonEntry.getValue().setId("ei-voida-avata");
-                    } else {
-                        System.out.println("Jotain meni pieleen!");
-                    }
+
+            for (Button button : buttonit) {
+
+                Luukku luukku = luukkuLista.get(button.getId());
+                //luukku on jo avattu
+                if (button.getId().equals(luukku.getNimi()) && luukku.isAvattu()) {
+                    button.setId("avattu");
+                    //luukku ennen nykyistä päivää tai luukun päivä on sama kuin nykyinen päivä
+                } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
+                    button.setId("ei-avattu");
+                } else {
+                    button.setId("ei-voida-avata");
                 }
             }
-
-        } else {
-            System.out.println(kasittelija.kirjoitaLuukutJsonTiedostoon());
         }
     }
 }
