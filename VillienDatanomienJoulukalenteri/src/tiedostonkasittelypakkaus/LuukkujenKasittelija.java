@@ -26,13 +26,13 @@ import paivamaara.Paivays;
 public class LuukkujenKasittelija {
 
     private LinkedHashMap<String, Luukku> luukkuLista;
-    private LinkedHashMap<String, Luukku> apuLista;
+//    private LinkedHashMap<String, Luukku> apuLista;
 
     Paivays paivayksenHallinta = new Paivays();
 
     public LuukkujenKasittelija() {
         luukkuLista = lueJsonListaan();
-        apuLista = new LinkedHashMap<>();
+//        apuLista = new LinkedHashMap<>();
     }
 
     public boolean kirjoitaLuukutJsonTiedostoon() {
@@ -98,12 +98,12 @@ public class LuukkujenKasittelija {
 
         
         System.out.println("luukku5: " + luukkuLista.get("luukku5").getNumero());
-        System.out.println("ApuLista: " + apuLista);
+//        System.out.println("ApuLista: " + apuLista);
         System.out.println("LuukkuLista: " + luukkuLista);
         
         if (voikoLuukunAvata(luukunNimi)) {
             luukkuLista.put("luukku" + luukkuLista.get(luukunNimi).getNumero(), new Luukku("luukku" + luukkuLista.get(luukunNimi).getNumero(), luukkuLista.get(luukunNimi).getNumero(), true, paivayksenHallinta.parseDate(luukkuLista.get(luukunNimi).getNumero() + "/11/2017"), luukkuLista.get(luukunNimi).getSisalto()));
-            System.out.println("uusi lasta " + luukkuLista);
+            System.out.println("uusi lista " + luukkuLista);
 
             try {
 

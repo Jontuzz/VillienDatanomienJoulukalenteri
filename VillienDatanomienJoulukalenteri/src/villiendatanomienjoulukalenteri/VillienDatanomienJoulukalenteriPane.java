@@ -6,24 +6,22 @@
 package villiendatanomienjoulukalenteri;
 
 import java.io.IOException;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import tiedostonkasittelypakkaus.Luukku;
 
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
-import paivamaara.Paivays;
 
 /**
  *
@@ -127,6 +125,22 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             if (kasittelija.avaaLuukku("luukku1")) {
                 System.out.println("Avataan...");
                 luukku1.setId("avattu");
+                
+                try {
+                    Stage newStage = new Stage();
+
+                    Parent root = FXMLLoader.load(getClass().getResource("luukku.fxml"));
+
+                    Scene scene = new Scene(root);
+                    newStage.setScene(scene);
+                    newStage.setTitle("Avattu luukku");
+                    newStage.setResizable(false);
+                    newStage.show();
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                
             } else {
                 System.out.println("Ei voida avata");
             }
