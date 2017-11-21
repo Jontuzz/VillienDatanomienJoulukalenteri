@@ -1,0 +1,9 @@
+{
+  "luukku1" : {
+    "nimi" : "luukku1",
+    "numero" : 1,
+    "avattu" : true,
+    "luukunPaivays" : 1509487200000,
+    "sisalto" : "Hyvää joulua!"
+  }
+}

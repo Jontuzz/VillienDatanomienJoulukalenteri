@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +18,7 @@ import javafx.scene.control.Button;
 import tiedostonkasittelypakkaus.Luukku;
 
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
+import paivamaara.Paivays;
 
 /**
  *
@@ -106,136 +105,245 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
     //Luukkujen avaus metodit alkaa
     @FXML
     private void avaaLuukku1(ActionEvent event) {
-        if (kasittelija.voikoLuukunAvata("luukku1")) {
+        if (kasittelija.avaaLuukku("luukku1")) {
             System.out.println("Avataan...");
-            try {
-                Thread.sleep(2000);
-                luukku1.setId("avattu");
-                System.out.println("Avattu");
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
+            luukku1.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
         }
-        System.out.println("Avasit luukun numero 1.");
     }
 
     @FXML
     private void avaaLuukku2(ActionEvent event) {
-        System.out.println("Avasit luukun numero 2.");
+        if (kasittelija.avaaLuukku("luukku2")) {
+            System.out.println("Avataan...");
+            luukku2.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        } 
     }
 
     @FXML
     private void avaaLuukku3(ActionEvent event) {
-        System.out.println("Avasit luukun numero 3.");
+        if (kasittelija.avaaLuukku("luukku3")) {
+            System.out.println("Avataan...");
+            luukku3.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku4(ActionEvent event) {
-        System.out.println("Avasit luukun numero 4.");
+        if (kasittelija.avaaLuukku("luukku4")) {
+            System.out.println("Avataan...");
+            luukku4.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku5(ActionEvent event) {
-        System.out.println("Avasit luukun numero 5.");
+        if (kasittelija.avaaLuukku("luukku5")) {
+            System.out.println("Avataan...");
+            luukku5.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku6(ActionEvent event) {
-        System.out.println("Avasit luukun numero 6.");
+        if (kasittelija.avaaLuukku("luukku6")) {
+            System.out.println("Avataan...");
+            luukku6.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku7(ActionEvent event) {
-        System.out.println("Avasit luukun numero 7.");
+        if (kasittelija.avaaLuukku("luukku7")) {
+            System.out.println("Avataan...");
+            luukku7.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku8(ActionEvent event) {
-        System.out.println("Avasit luukun numero 8.");
+        if (kasittelija.avaaLuukku("luukku8")) {
+            System.out.println("Avataan...");
+            luukku8.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku9(ActionEvent event) {
-        System.out.println("Avasit luukun numero 9.");
+        if (kasittelija.avaaLuukku("luukku9")) {
+            System.out.println("Avataan...");
+            luukku9.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku10(ActionEvent event) {
-        System.out.println("Avasit luukun numero 10.");
+        if (kasittelija.avaaLuukku("luukku10")) {
+            System.out.println("Avataan...");
+            luukku10.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku11(ActionEvent event) {
-        System.out.println("Avasit luukun numero 11.");
+        if (kasittelija.avaaLuukku("luukku11")) {
+            System.out.println("Avataan...");
+            luukku11.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku12(ActionEvent event) {
-        System.out.println("Avasit luukun numero 12.");
+        if (kasittelija.avaaLuukku("luukku12")) {
+            System.out.println("Avataan...");
+            luukku12.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku13(ActionEvent event) {
-        System.out.println("Avasit luukun numero 13.");
+        if (kasittelija.avaaLuukku("luukku13")) {
+            System.out.println("Avataan...");
+            luukku13.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku14(ActionEvent event) {
-        System.out.println("Avasit luukun numero 14.");
+        if (kasittelija.avaaLuukku("luukku14")) {
+            System.out.println("Avataan...");
+            luukku14.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku15(ActionEvent event) {
-        System.out.println("Avasit luukun numero 15.");
+        if (kasittelija.avaaLuukku("luukku15")) {
+            System.out.println("Avataan...");
+            luukku15.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku16(ActionEvent event) {
-        System.out.println("Avasit luukun numero 16.");
+        if (kasittelija.avaaLuukku("luukku16")) {
+            System.out.println("Avataan...");
+            luukku16.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku17(ActionEvent event) {
-        System.out.println("Avasit luukun numero 17.");
+        if (kasittelija.avaaLuukku("luukku17")) {
+            System.out.println("Avataan...");
+            luukku17.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku18(ActionEvent event) {
-        System.out.println("Avasit luukun numero 18.");
+        if (kasittelija.avaaLuukku("luukku18")) {
+            System.out.println("Avataan...");
+            luukku18.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku19(ActionEvent event) {
-        System.out.println("Avasit luukun numero 19.");
+        if (kasittelija.avaaLuukku("luukku19")) {
+            System.out.println("Avataan...");
+            luukku19.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku20(ActionEvent event) {
-        System.out.println("Avasit luukun numero 20.");
+        if (kasittelija.avaaLuukku("luukku20")) {
+            System.out.println("Avataan...");
+            luukku20.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku21(ActionEvent event) {
-        System.out.println("Avasit luukun numero 21.");
+        if (kasittelija.avaaLuukku("luukku21")) {
+            System.out.println("Avataan...");
+            luukku21.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku22(ActionEvent event) {
-        System.out.println("Avasit luukun numero 22.");
+        if (kasittelija.avaaLuukku("luukku22")) {
+            System.out.println("Avataan...");
+            luukku22.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku23(ActionEvent event) {
-        System.out.println("Avasit luukun numero 23.");
+        if (kasittelija.avaaLuukku("luukku23")) {
+            System.out.println("Avataan...");
+            luukku23.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     @FXML
     private void avaaLuukku24(ActionEvent event) {
-        System.out.println("Avasit luukun numero 24.");
+        if (kasittelija.avaaLuukku("luukku24")) {
+            System.out.println("Avataan...");
+            luukku24.setId("avattu");
+        } else {
+            System.out.println("Ei voida avata");
+        }
     }
 
     //Luukkujen avaus metodit loppuu
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -265,7 +373,7 @@ public class VillienDatanomienJoulukalenteriController implements Initializable 
         buttonit.add(luukku22);
         buttonit.add(luukku23);
         buttonit.add(luukku24);
-        
+
         //tarkistetaan onko tiedostoa "JouluKalenteriLuukut.json" olemassa
         File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
         if (JouluKalenteriLuukutJson.exists()) {

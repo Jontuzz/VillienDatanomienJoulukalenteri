@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author s1601378
  */
-public class TarkistaPaivays {
+public class Paivays {
     
     public Date parseDate(String paiva) {
         //Päivämäärät tulee olla tässä muodossa

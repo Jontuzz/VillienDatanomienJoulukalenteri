@@ -17,7 +17,8 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import paivamaara.TarkistaPaivays;
+import paivamaara.Paivays;
+
 /**
  *
  * @author s1601378
@@ -25,9 +26,9 @@ import paivamaara.TarkistaPaivays;
 public class LuukkujenKasittelija {
 
     private LinkedHashMap<String, Luukku> luukkuLista;
-    
-    TarkistaPaivays paivayksenHallinta = new TarkistaPaivays();
-    
+
+    Paivays paivayksenHallinta = new Paivays();
+
     public LuukkujenKasittelija() {
         luukkuLista = new LinkedHashMap<>();
     }
@@ -35,8 +36,8 @@ public class LuukkujenKasittelija {
     public boolean kirjoitaLuukutJsonTiedostoon() {
         /*Jos tiedostoa ei löydy tai tiedostoa on muokattu siten, että sen lukeminen aiheuttaa virheen
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
-        */
-        
+         */
+
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
                 //lisätään jokainen luukku LinkedHashMappiin
@@ -67,7 +68,8 @@ public class LuukkujenKasittelija {
         LinkedHashMap<String, Luukku> result = null;
         //Kokeillaan lukea json tiedostossa olevat luukut
         try {
-            result = mapper.readValue(new File("MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>(){});
+            result = mapper.readValue(new File("MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>() {
+            });
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
@@ -78,15 +80,49 @@ public class LuukkujenKasittelija {
         //lukemisen onnistuessa palautetaan metodin kutsujalle json tiedostosta luetut luukut LinkedHashMapissä. Muuten tulostetaan error
         return result;
     }
-    
+
     public boolean voikoLuukunAvata(String luukunNimi) {
-        
+
         Date luukunPaiva = lueJsonListaan().get(luukunNimi).getLuukunPaivays();
         Date tamaPaiva = new Date();
-        
+
         if (luukunPaiva.equals(tamaPaiva) || luukunPaiva.before(tamaPaiva)) {
             return true;
         }
         return false;
+    }
+
+    public boolean avaaLuukku(String luukunNimi) {
+
+        LinkedHashMap<String, Luukku> apuLista = luukkuLista;
+
+        if (voikoLuukunAvata(luukunNimi)) {
+            apuLista = luukkuLista;
+            luukkuLista.put(luukunNimi, new Luukku("luukku1", 1, true, paivayksenHallinta.parseDate("1/11/2017"), "Hyvää joulua!"));
+
+            System.out.println(luukkuLista);
+
+            try {
+
+                ObjectMapper mapper = new ObjectMapper();
+
+                //DefaultPrettyPrinter määrittää, että Java oliot eivät tule yhteen pötköön json tiedostoon
+                ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+
+                writer.writeValue(new File("TestiLuukut.json"), luukkuLista);
+                return true;
+
+            } catch (JsonGenerationException e) {
+                e.printStackTrace();
+            } catch (JsonMappingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return true;
+        } else {
+            return false;
+        }
     }
 }
