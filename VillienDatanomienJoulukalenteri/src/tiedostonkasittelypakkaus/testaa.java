@@ -14,11 +14,11 @@ import java.util.Map;
 public class testaa {
     public static void main(String[] args) {
         LuukkujenKasittelija kasittelija = new LuukkujenKasittelija();
-        System.out.println(kasittelija.lueJsonListaan());
-        
-        for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
-            System.out.println(luukku.getValue().toString());
-            System.out.println("nimi: " + luukku.getValue().getNimi());
-        }
+//        System.out.println(kasittelija.lueJsonListaan());
+        kasittelija.kirjoitaLuukutJsonTiedostoon();
+//        for (Map.Entry<String, Luukku> luukku : kasittelija.lueJsonListaan().entrySet()) {
+//            System.out.println(luukku.getValue().toString());
+//            System.out.println("nimi: " + luukku.getValue().getNimi());
+//        }
     }
 }
