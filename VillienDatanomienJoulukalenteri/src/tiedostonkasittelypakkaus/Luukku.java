@@ -13,6 +13,7 @@ import java.util.Date;
  */
 public class Luukku {
     
+    
     private String nimi;
     private int numero;
     private boolean avattu;

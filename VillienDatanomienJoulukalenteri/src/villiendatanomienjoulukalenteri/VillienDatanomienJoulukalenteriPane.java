@@ -44,6 +44,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     private LuukkujenKasittelija kasittelija = new LuukkujenKasittelija();
     private ArrayList<Button> buttonit = new ArrayList<>();
     private Date nykyinenPaiva = new Date();
+    private LinkedHashMap<String, Luukku> luukkuLista = new LinkedHashMap<>();
 
     @FXML
     private Button luukku1;
@@ -121,33 +122,25 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     @FXML
     private void initialize() {
 
+        
+        
         luukku1.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku1")) {
+            String luukkuNimi = "luukku1";
+            if (luukku1.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku1.setId("avattu");
-                
-                try {
-                    Stage newStage = new Stage();
-
-                    Parent root = FXMLLoader.load(getClass().getResource("luukku.fxml"));
-
-                    Scene scene = new Scene(root);
-                    newStage.setScene(scene);
-                    newStage.setTitle("Avattu luukku");
-                    newStage.setResizable(false);
-                    newStage.show();
-
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-                
             } else {
                 System.out.println("Ei voida avata");
             }
         });
 
         luukku2.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku2")) {
+            String luukkuNimi = "luukku2";
+            if (luukku2.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku2.setId("avattu");
             } else {
@@ -156,7 +149,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku3.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku3")) {
+            String luukkuNimi = "luukku3";
+            if (luukku3.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku3.setId("avattu");
             } else {
@@ -165,7 +161,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku4.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku4")) {
+            
+            String luukkuNimi = "luukku4";
+            if (luukku4.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku4.setId("avattu");
             } else {
@@ -174,7 +174,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku5.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku5")) {
+            String luukkuNimi = "luukku5";
+            if (luukku5.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku5.setId("avattu");
             } else {
@@ -183,7 +186,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku6.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku6")) {
+            String luukkuNimi = "luukku6";
+            if (luukku6.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku6.setId("avattu");
             } else {
@@ -192,7 +198,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku7.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku7")) {
+            String luukkuNimi = "luukku7";
+            if (luukku7.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku7.setId("avattu");
             } else {
@@ -201,7 +210,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku8.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku8")) {
+            String luukkuNimi = "luukku8";
+            if (luukku8.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku8.setId("avattu");
             } else {
@@ -210,7 +222,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku9.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku9")) {
+            String luukkuNimi = "luukku9";
+            if (luukku9.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku9.setId("avattu");
             } else {
@@ -219,7 +234,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku10.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku10")) {
+            String luukkuNimi = "luukku10";
+            if (luukku10.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku10.setId("avattu");
             } else {
@@ -228,7 +246,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku11.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku11")) {
+            String luukkuNimi = "luukku11";
+            if (luukku11.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku11.setId("avattu");
             } else {
@@ -237,7 +258,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku12.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku12")) {
+            String luukkuNimi = "luukku12";
+            if (luukku12.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku12.setId("avattu");
             } else {
@@ -246,7 +270,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku13.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku13")) {
+            String luukkuNimi = "luukku13";
+            if (luukku13.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku13.setId("avattu");
             } else {
@@ -255,7 +282,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku14.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku14")) {
+            String luukkuNimi = "luukku14";
+            if (luukku14.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku14.setId("avattu");
             } else {
@@ -264,7 +294,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku15.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku15")) {
+            String luukkuNimi = "luukku15";
+            if (luukku15.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku15.setId("avattu");
             } else {
@@ -273,7 +306,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku16.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku16")) {
+            String luukkuNimi = "luukku16";
+            if (luukku16.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku16.setId("avattu");
             } else {
@@ -282,7 +318,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku17.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku17")) {
+            String luukkuNimi = "luukku17";
+            if (luukku17.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku17.setId("avattu");
             } else {
@@ -291,7 +330,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku18.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku18")) {
+            String luukkuNimi = "luukku18";
+            if (luukku18.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku18.setId("avattu");
             } else {
@@ -300,7 +342,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku19.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku19")) {
+            String luukkuNimi = "luukku19";
+            if (luukku19.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku19.setId("avattu");
             } else {
@@ -309,7 +354,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku20.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku20")) {
+            String luukkuNimi = "luukku20";
+            if (luukku20.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku20.setId("avattu");
             } else {
@@ -318,7 +366,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku21.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku21")) {
+            String luukkuNimi = "luukku21";
+            if (luukku21.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku21.setId("avattu");
             } else {
@@ -327,7 +378,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku22.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku22")) {
+            String luukkuNimi = "luukku22";
+            if (luukku22.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku22.setId("avattu");
             } else {
@@ -336,7 +390,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku23.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku23")) {
+            String luukkuNimi = "luukku23";
+            if (luukku23.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku23.setId("avattu");
             } else {
@@ -345,7 +402,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku24.setOnAction((ActionEvent event) -> {
-            if (kasittelija.avaaLuukku("luukku24")) {
+            String luukkuNimi = "luukku24";
+            if (luukku24.getId().equals("avattu")) {
+                kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku24.setId("avattu");
             } else {

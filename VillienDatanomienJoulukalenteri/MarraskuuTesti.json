@@ -149,7 +149,7 @@
   "luukku22" : {
     "nimi" : "luukku22",
     "numero" : 22,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1511301600000,
     "sisalto" : "Hyvää Joulua!"
   },

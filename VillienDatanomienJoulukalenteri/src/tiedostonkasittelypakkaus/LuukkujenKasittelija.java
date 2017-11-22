@@ -16,9 +16,13 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import paivamaara.Paivays;
-
+import villiendatanomienjoulukalenteri.AvattuLuukkuPane;
 /**
  *
  * @author s1601378
@@ -83,7 +87,7 @@ public class LuukkujenKasittelija {
         return result;
     }
 
-    public boolean voikoLuukunAvata(String luukunNimi) {
+    private boolean voikoLuukunAvata(String luukunNimi) {
 
         Date luukunPaiva = lueJsonListaan().get(luukunNimi).getLuukunPaivays();
         Date tamaPaiva = new Date();
@@ -114,6 +118,7 @@ public class LuukkujenKasittelija {
 
                 writer.writeValue(new File("MarraskuuTesti.json"), luukkuLista);
                 System.out.println("Tehty: " + luukkuLista);
+                avaaLuukkuWindow(luukkuLista.get(luukunNimi));
                 return true;
 
             } catch (JsonGenerationException e) {
@@ -129,4 +134,27 @@ public class LuukkujenKasittelija {
             return false;
         }
     }
+    
+    public boolean avaaLuukkuWindow(Luukku luukku) {
+            try {
+                    Stage newStage = new Stage();
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml"));
+                    Parent root = fxmlLoader.load();
+
+                    AvattuLuukkuPane luukkuPane = fxmlLoader.getController();
+                    
+                    luukkuPane.setLuukku(luukku);
+                    
+                    Scene scene = new Scene(root);
+                    newStage.setScene(scene);
+                    newStage.setTitle("Avattu luukku");
+                    newStage.setResizable(false);
+                    newStage.show();
+                    return true;
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+        return false;
+        }
 }
