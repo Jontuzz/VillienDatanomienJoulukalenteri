@@ -156,7 +156,7 @@
   "luukku23" : {
     "nimi" : "luukku23",
     "numero" : 23,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1511388000000,
     "sisalto" : "Hyvää Joulua!"
   },

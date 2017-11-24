@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import paivamaara.Paivays;
 import villiendatanomienjoulukalenteri.AvattuLuukkuPane;
+
 /**
  *
  * @author s1601378
@@ -95,11 +96,10 @@ public class LuukkujenKasittelija {
 
     public boolean avaaLuukku(String luukunNimi) {
 
-        
         System.out.println("luukku5: " + luukkuLista.get("luukku5").getNumero());
 //        System.out.println("ApuLista: " + apuLista);
         System.out.println("LuukkuLista: " + luukkuLista);
-        
+
         if (voikoLuukunAvata(luukunNimi)) {
             luukkuLista.put("luukku" + luukkuLista.get(luukunNimi).getNumero(), new Luukku("luukku" + luukkuLista.get(luukunNimi).getNumero(), luukkuLista.get(luukunNimi).getNumero(), true, paivayksenHallinta.parseDate(luukkuLista.get(luukunNimi).getNumero() + "/11/2017"), luukkuLista.get(luukunNimi).getSisalto()));
             System.out.println("uusi lista " + luukkuLista);
@@ -129,27 +129,28 @@ public class LuukkujenKasittelija {
             return false;
         }
     }
-    
+
     public boolean avaaLuukkuWindow(Luukku luukku) {
-            try {
-                    Stage newStage = new Stage();
+        try {
+            Stage newStage = new Stage();
 
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml"));
-                    Parent root = fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml"));
 
-                    AvattuLuukkuPane luukkuPane = fxmlLoader.getController();
-                    
-                    luukkuPane.setLuukku(luukku);
-                    
-                    Scene scene = new Scene(root);
-                    newStage.setScene(scene);
-                    newStage.setTitle("Avattu luukku");
-                    newStage.setResizable(false);
-                    newStage.show();
-                    return true;
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-        return false;
+            AvattuLuukkuPane luukkuPane = new AvattuLuukkuPane();
+            luukkuPane.setLuukku(luukku);
+            fxmlLoader.setController(luukkuPane);
+
+            Parent root = fxmlLoader.load();
+
+            Scene scene = new Scene(root);
+            newStage.setScene(scene);
+            newStage.setTitle("Avattu luukku");
+            newStage.setResizable(false);
+            newStage.show();
+            return true;
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
+        return false;
+    }
 }

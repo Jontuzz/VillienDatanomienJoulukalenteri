@@ -20,7 +20,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import tiedostonkasittelypakkaus.Luukku;
-
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 
 /**
@@ -28,7 +27,7 @@ import tiedostonkasittelypakkaus.LuukkujenKasittelija;
  * @author s1601378
  */
 public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
-
+    
     public VillienDatanomienJoulukalenteriPane() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VillienDatanomienJoulukalenteriPane.fxml"));
         fxmlLoader.setRoot(this);
@@ -128,6 +127,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             String luukkuNimi = "luukku1";
             if (luukku1.getId().equals("avattu")) {
                 kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+//                System.out.println(luukkuLista.get(luukkuNimi));
             } else if (kasittelija.avaaLuukku(luukkuNimi)) {
                 System.out.println("Avataan...");
                 luukku1.setId("avattu");
@@ -445,7 +445,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         if (JouluKalenteriLuukutJson.exists()) {
             System.out.println("Luukut on jo json tiedostossa!");
 
-            LinkedHashMap<String, Luukku> luukkuLista = kasittelija.lueJsonListaan();
+            luukkuLista = kasittelija.lueJsonListaan();
             System.out.println(kasittelija.lueJsonListaan());
 
             //käydään nappien lista läpi
