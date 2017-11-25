@@ -7,9 +7,12 @@ package villiendatanomienjoulukalenteri;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import tiedostonkasittelypakkaus.Luukku;
-
+import paivamaara.Paivays;
 /**
  * FXML Controller class
  *
@@ -28,9 +31,14 @@ import tiedostonkasittelypakkaus.Luukku;
 public class AvattuLuukkuPane implements Initializable {
 
     private Luukku luukku;
-
+    private Date tamaPaiva = new Date();
     private AnchorPane anchorPane;
+    
+    private Paivays paivayksenHallinta = new Paivays();
 
+    @FXML
+    private Label pvm;
+    
     @FXML
     private TextArea luukkusisalto;
 
@@ -49,9 +57,7 @@ public class AvattuLuukkuPane implements Initializable {
         luukkusisalto.setText(luukku.getSisalto());
         luukunNumero.setText("Luukku " + Integer.toString(luukku.getNumero()));
 
-        palaa.setOnAction((ActionEvent event) -> {
-            
-        });
+        pvm.setText(paivayksenHallinta.dateAsString(tamaPaiva));
 
     }
 

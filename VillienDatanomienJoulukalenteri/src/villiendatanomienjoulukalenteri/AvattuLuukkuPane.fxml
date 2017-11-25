@@ -9,11 +9,21 @@
 <AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="960.0" stylesheets="@JouluKalenteri.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TextArea fx:id="luukkusisalto" layoutX="142.0" layoutY="322.0" prefHeight="204.0" prefWidth="677.0" />
-      <Label fx:id="luukunNumero" layoutX="771.0" layoutY="25.0" prefHeight="39.0" prefWidth="167.0" text="Luukku" textFill="WHITE">
+      <Label fx:id="luukunNumero" layoutX="779.0" layoutY="25.0" prefHeight="39.0" prefWidth="167.0" text="Luukku" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="32.0" />
          </font>
       </Label>
       <Button fx:id="palaa" layoutX="894.0" layoutY="501.0" mnemonicParsing="false" text="Palaa" />
+      <Label layoutX="14.0" layoutY="26.0" text="Tännään on" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="pvm" layoutX="14.0" layoutY="56.0" prefHeight="29.0" prefWidth="270.0" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
