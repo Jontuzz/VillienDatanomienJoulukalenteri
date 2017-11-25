@@ -30,4 +30,15 @@ public class Paivays {
         }
         return null;
     }
+    
+    public String dateAsString(Date paiva) {
+        //Päivämäärät tulee olla tässä muodossa
+        //String date = "24/12/2017";
+
+        //Muunnetaan String dateksi, jotta voimme myöhemmin vertailla.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String luukunPaivays = sdf.format(paiva);
+        //            System.out.println(luukunPaivays);
+        return luukunPaivays;
+    }
 }

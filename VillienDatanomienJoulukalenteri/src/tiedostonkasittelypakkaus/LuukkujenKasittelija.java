@@ -14,6 +14,7 @@ import java.util.Map;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import paivamaara.Paivays;
@@ -131,9 +132,14 @@ public class LuukkujenKasittelija {
     }
 
     public boolean avaaLuukkuWindow(Luukku luukku) {
+        
+        String luukunNumero = Integer.toString(luukku.getNumero());
+        String luukunPaivays = paivayksenHallinta.dateAsString(luukku.getLuukunPaivays());
+        
         try {
             Stage newStage = new Stage();
-
+            newStage.initModality(Modality.WINDOW_MODAL);
+            
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml"));
 
             AvattuLuukkuPane luukkuPane = new AvattuLuukkuPane();
@@ -144,7 +150,7 @@ public class LuukkujenKasittelija {
 
             Scene scene = new Scene(root);
             newStage.setScene(scene);
-            newStage.setTitle("Avattu luukku");
+            newStage.setTitle("Luukku: " + luukunNumero + ". " + luukunPaivays);
             newStage.setResizable(false);
             newStage.show();
             return true;
