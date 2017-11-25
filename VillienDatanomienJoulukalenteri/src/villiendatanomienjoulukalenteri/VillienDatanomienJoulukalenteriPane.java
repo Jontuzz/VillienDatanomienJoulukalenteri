@@ -13,6 +13,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -27,7 +29,7 @@ import tiedostonkasittelypakkaus.LuukkujenKasittelija;
  * @author s1601378
  */
 public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
-    
+
     public VillienDatanomienJoulukalenteriPane() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("VillienDatanomienJoulukalenteriPane.fxml"));
         fxmlLoader.setRoot(this);
@@ -44,6 +46,9 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     private ArrayList<Button> buttonit = new ArrayList<>();
     private Date nykyinenPaiva = new Date();
     private LinkedHashMap<String, Luukku> luukkuLista = new LinkedHashMap<>();
+
+    @FXML
+    AnchorPane anchorPane;
 
     @FXML
     private Button luukku1;
@@ -117,12 +122,21 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     @FXML
     private Button luukku24;
 
+    @FXML
+    private Button vaihda;
+
     //Luukkujen avaus metodit loppuu
     @FXML
     private void initialize() {
 
-        
-        
+        vaihda.setOnAction((ActionEvent event) -> {
+            try {
+                setDynamicPane(FXMLLoader.load(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml")));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
         luukku1.setOnAction((ActionEvent event) -> {
             String luukkuNimi = "luukku1";
             if (luukku1.getId().equals("avattu")) {
@@ -161,7 +175,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         });
 
         luukku4.setOnAction((ActionEvent event) -> {
-            
+
             String luukkuNimi = "luukku4";
             if (luukku4.getId().equals("avattu")) {
                 kasittelija.avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
@@ -464,5 +478,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 }
             }
         }
+    }
+
+    private void setDynamicPane(AnchorPane dynamicPane) {
+        this.anchorPane.getChildren().clear();
+        this.anchorPane.getChildren().add(dynamicPane);
     }
 }

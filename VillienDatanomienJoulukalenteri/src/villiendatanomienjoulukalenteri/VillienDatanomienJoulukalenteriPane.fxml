@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root id="AnchorPane" prefHeight="540.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="AnchorPane" fx:id="anchorPane" prefHeight="540.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@JouluKalenteri.css" />
     </stylesheets>
@@ -203,5 +203,6 @@
                 <Bloom />
             </effect>
         </Button>
+      <Button fx:id="vaihda" layoutX="313.0" layoutY="329.0" mnemonicParsing="false" text="Button" />
     </children>
 </fx:root>
