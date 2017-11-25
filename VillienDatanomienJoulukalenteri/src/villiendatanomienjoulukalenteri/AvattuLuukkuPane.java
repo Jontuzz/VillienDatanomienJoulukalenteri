@@ -5,11 +5,19 @@
  */
 package villiendatanomienjoulukalenteri;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import tiedostonkasittelypakkaus.Luukku;
 
 /**
@@ -20,9 +28,18 @@ import tiedostonkasittelypakkaus.Luukku;
 public class AvattuLuukkuPane implements Initializable {
 
     private Luukku luukku;
-    
+
+    private AnchorPane anchorPane;
+
     @FXML
     private TextArea luukkusisalto;
+
+    @FXML
+    private Label luukunNumero;
+
+    @FXML
+    private Button palaa;
+
     /**
      * Initializes the controller class.
      */
@@ -30,8 +47,14 @@ public class AvattuLuukkuPane implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println(luukku);
         luukkusisalto.setText(luukku.getSisalto());
-    }    
-    
+        luukunNumero.setText("Luukku " + Integer.toString(luukku.getNumero()));
+
+        palaa.setOnAction((ActionEvent event) -> {
+            
+        });
+
+    }
+
     public void setLuukku(Luukku luukku) {
         this.luukku = luukku;
     }

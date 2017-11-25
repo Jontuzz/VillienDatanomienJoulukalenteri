@@ -203,6 +203,5 @@
                 <Bloom />
             </effect>
         </Button>
-      <Button fx:id="vaihda" layoutX="313.0" layoutY="329.0" mnemonicParsing="false" text="Button" />
     </children>
 </fx:root>

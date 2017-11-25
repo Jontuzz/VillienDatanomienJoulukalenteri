@@ -26,13 +26,12 @@ import villiendatanomienjoulukalenteri.AvattuLuukkuPane;
  */
 public class LuukkujenKasittelija {
 
-    private LinkedHashMap<String, Luukku> luukkuLista;
+    private LinkedHashMap<String, Luukku> luukkuLista = new LinkedHashMap<>();
 //    private LinkedHashMap<String, Luukku> apuLista;
 
     Paivays paivayksenHallinta = new Paivays();
 
     public LuukkujenKasittelija() {
-        luukkuLista = lueJsonListaan();
 //        apuLista = new LinkedHashMap<>();
     }
 
@@ -40,7 +39,7 @@ public class LuukkujenKasittelija {
         /*Jos tiedostoa ei löydy tai tiedostoa on muokattu siten, että sen lukeminen aiheuttaa virheen
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
          */
-
+        
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
                 //lisätään jokainen luukku LinkedHashMappiin
@@ -97,6 +96,8 @@ public class LuukkujenKasittelija {
 
     public boolean avaaLuukku(String luukunNimi) {
 
+        luukkuLista = lueJsonListaan();
+        
         System.out.println("luukku5: " + luukkuLista.get("luukku5").getNumero());
 //        System.out.println("ApuLista: " + apuLista);
         System.out.println("LuukkuLista: " + luukkuLista);
@@ -114,7 +115,6 @@ public class LuukkujenKasittelija {
 
                 writer.writeValue(new File("MarraskuuTesti.json"), luukkuLista);
                 System.out.println("Tehty: " + luukkuLista);
-                avaaLuukkuWindow(luukkuLista.get(luukunNimi));
                 return true;
 
             } catch (JsonGenerationException e) {
@@ -129,34 +129,5 @@ public class LuukkujenKasittelija {
         } else {
             return false;
         }
-    }
-
-    public boolean avaaLuukkuWindow(Luukku luukku) {
-        
-        String luukunNumero = Integer.toString(luukku.getNumero());
-        String luukunPaivays = paivayksenHallinta.dateAsString(luukku.getLuukunPaivays());
-        
-        try {
-            Stage newStage = new Stage();
-            newStage.initModality(Modality.WINDOW_MODAL);
-            
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/AvattuLuukkuPane.fxml"));
-
-            AvattuLuukkuPane luukkuPane = new AvattuLuukkuPane();
-            luukkuPane.setLuukku(luukku);
-            fxmlLoader.setController(luukkuPane);
-
-            Parent root = fxmlLoader.load();
-
-            Scene scene = new Scene(root);
-            newStage.setScene(scene);
-            newStage.setTitle("Luukku: " + luukunNumero + ". " + luukunPaivays);
-            newStage.setResizable(false);
-            newStage.show();
-            return true;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        return false;
     }
 }
