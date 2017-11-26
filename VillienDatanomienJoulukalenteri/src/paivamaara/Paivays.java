@@ -23,7 +23,6 @@ public class Paivays {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date luukunPaivays = sdf.parse(paiva);
-//            System.out.println(luukunPaivays);
             return luukunPaivays;
         } catch (ParseException ex) {
             ex.getMessage();
@@ -32,13 +31,10 @@ public class Paivays {
     }
     
     public String dateAsString(Date paiva) {
-        //Päivämäärät tulee olla tässä muodossa
-        //String date = "24/12/2017";
-
-        //Muunnetaan String dateksi, jotta voimme myöhemmin vertailla.
+        //Muunnetaan Date objekti String tyyppiseksi
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String luukunPaivays = sdf.format(paiva);
-        //            System.out.println(luukunPaivays);
+        
         return luukunPaivays;
     }
 }
