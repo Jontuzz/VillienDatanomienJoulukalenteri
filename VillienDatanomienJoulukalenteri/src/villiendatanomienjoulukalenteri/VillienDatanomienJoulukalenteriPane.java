@@ -183,10 +183,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                     //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku1.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -199,10 +199,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                     //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku2.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -215,10 +215,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku3.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku3.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -231,10 +231,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku4.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku4.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -246,10 +246,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku5.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku5.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -261,10 +261,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku6.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku6.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -276,10 +277,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku7.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku7.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -291,10 +293,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku8.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku8.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -306,10 +309,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku9.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku9.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -321,10 +325,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku10.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku10.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -336,10 +341,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku11.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku11.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -351,10 +357,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku12.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku12.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -366,10 +373,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku13.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku13.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -381,10 +388,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku14.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku14.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -396,10 +403,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku15.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku15.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -411,10 +418,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku16.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku16.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -426,10 +433,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku17.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku17.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -441,10 +448,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku18.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku18.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -456,10 +463,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku19.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku19.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -471,10 +478,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku20.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku20.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -486,10 +493,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku21.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku21.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -501,10 +508,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku22.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku22.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -516,10 +523,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku23.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku23.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -531,10 +538,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 if (luukku24.getId().equals("avattu")) {
                     avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                     //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
                     luukku24.setId("avattu");
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
                 } else {
                     //Jos luukkua ei voi vielä avata
                     System.out.println("Ei voida avata");
@@ -603,7 +610,6 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             luukkuPane.setLuukku(luukku);
             System.out.println(luukku.getKuva());
             luukkuPane.setKuva(luukku.getKuva());
-            luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();
 

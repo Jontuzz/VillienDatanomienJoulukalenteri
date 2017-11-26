@@ -62,8 +62,6 @@ public class AvattuLuukkuPane implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        mediaPlayer = new MediaPlayer(musiikkiTiedosto);
-        mediaPlayer.setAutoPlay(true);
         
         imageView.setImage(kuva);
         
@@ -75,14 +73,9 @@ public class AvattuLuukkuPane implements Initializable {
 
         palaa.setOnAction((ActionEvent event) -> {
             Stage luukkuStage = (Stage) palaa.getScene().getWindow();
-            mediaPlayer.stop();
             luukkuStage.close();
         });
 
-    }
-
-    public void setMusiikkiTiedosto(String tiedostoPolku) {
-        this.musiikkiTiedosto = new Media(getClass().getClassLoader().getResource(tiedostoPolku).toExternalForm());
     }
     
     public void setKuva(String osoite) {
