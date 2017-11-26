@@ -146,7 +146,7 @@
   "luukku19" : {
     "nimi" : "luukku19",
     "numero" : 19,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1511042400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
     "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
