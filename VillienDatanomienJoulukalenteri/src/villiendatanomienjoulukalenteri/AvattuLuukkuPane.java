@@ -15,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import tiedostonkasittelypakkaus.Luukku;
 import paivamaara.Paivays;
@@ -32,6 +34,9 @@ public class AvattuLuukkuPane implements Initializable {
 
     private Paivays paivayksenHallinta = new Paivays();
 
+    private MediaPlayer mediaPlayer;
+    private Media musiikkiTiedosto;
+    
     @FXML
     private Label pvm;
 
@@ -46,9 +51,16 @@ public class AvattuLuukkuPane implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        musiikkiTiedosto = new Media("file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3");
+        
+        mediaPlayer = new MediaPlayer(musiikkiTiedosto);
+        mediaPlayer.setAutoPlay(true);
+        
         System.out.println(luukku);
         luukkusisalto.setText(luukku.getSisalto());
         luukunNumero.setText("Luukku " + Integer.toString(luukku.getNumero()));
@@ -56,7 +68,8 @@ public class AvattuLuukkuPane implements Initializable {
         pvm.setText(paivayksenHallinta.dateAsString(tamaPaiva));
 
         palaa.setOnAction((ActionEvent event) -> {
-            Stage luukkuStage = (Stage) palaa.getScene().getWindow();//use any one object
+            Stage luukkuStage = (Stage) palaa.getScene().getWindow();
+            mediaPlayer.stop();
             luukkuStage.close();
         });
 
