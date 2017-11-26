@@ -514,9 +514,11 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             luukkuStage.initModality(Modality.APPLICATION_MODAL);
 
             Stage mainStage = (Stage) anchorPane.getScene().getWindow();//use any one object
+            //piilotetaan mainStage
             mainStage.hide();
-
+            //näytetään luukkuStage ja odotetaan, että se suljetaan
             luukkuStage.showAndWait();
+            //näytetään mainStage
             mainStage.show();
 
             return true;
