@@ -507,12 +507,17 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
             Scene luukkuScene = new Scene(root);
             Stage luukkuStage = new Stage();
-            
+
             luukkuStage.setTitle("Luukku " + luukku.getNumero() + ". " + paivayksenHallinta.dateAsString(luukku.getLuukunPaivays()));
             luukkuStage.setScene(luukkuScene);
             //rajoitetaan, että kun uusi ikkuna on auki ei voida päästä käsiksi pää ikkunaan
             luukkuStage.initModality(Modality.APPLICATION_MODAL);
-            luukkuStage.show();
+
+            Stage mainStage = (Stage) anchorPane.getScene().getWindow();//use any one object
+            mainStage.hide();
+
+            luukkuStage.showAndWait();
+            mainStage.show();
 
             return true;
         } catch (IOException ex) {

@@ -5,25 +5,20 @@
  */
 package villiendatanomienjoulukalenteri;
 
-import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import tiedostonkasittelypakkaus.Luukku;
 import paivamaara.Paivays;
+
 /**
  * FXML Controller class
  *
@@ -34,12 +29,12 @@ public class AvattuLuukkuPane implements Initializable {
     private Luukku luukku;
     private Date tamaPaiva = new Date();
     private AnchorPane anchorPane;
-    
+
     private Paivays paivayksenHallinta = new Paivays();
 
     @FXML
     private Label pvm;
-    
+
     @FXML
     private TextArea luukkusisalto;
 
@@ -61,20 +56,10 @@ public class AvattuLuukkuPane implements Initializable {
         pvm.setText(paivayksenHallinta.dateAsString(tamaPaiva));
 
         palaa.setOnAction((ActionEvent event) -> {
-//            try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/VillienDatanomienJoulukalenteriPane.fxml"));
-//
-//            
-//            Parent root = fxmlLoader.load();
-////            this.anchorPane.getChildren().clear();
-////            this.anchorPane.getChildren().add(root);
-//            this.anchorPane.getChildren().setAll(root);
-//
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
+            Stage luukkuStage = (Stage) palaa.getScene().getWindow();//use any one object
+            luukkuStage.close();
         });
-        
+
     }
 
     public void setLuukku(Luukku luukku) {
