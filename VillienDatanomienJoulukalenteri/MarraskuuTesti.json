@@ -2,7 +2,7 @@
   "luukku1" : {
     "nimi" : "luukku1",
     "numero" : 1,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1509487200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
     "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
@@ -106,7 +106,7 @@
   "luukku14" : {
     "nimi" : "luukku14",
     "numero" : 14,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1510610400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
     "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
@@ -138,7 +138,7 @@
   "luukku18" : {
     "nimi" : "luukku18",
     "numero" : 18,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1510956000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
     "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
