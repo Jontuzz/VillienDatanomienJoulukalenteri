@@ -20,7 +20,7 @@ public class VillienDatanomienJoulukalenteri extends Application {
         VillienDatanomienJoulukalenteriPane root = new VillienDatanomienJoulukalenteriPane();
         
         Scene scene = new Scene(root);
-        
+        stage.setTitle("Villien Datanomien Joulukalenteri");
         stage.setScene(scene);
         stage.show();
     }

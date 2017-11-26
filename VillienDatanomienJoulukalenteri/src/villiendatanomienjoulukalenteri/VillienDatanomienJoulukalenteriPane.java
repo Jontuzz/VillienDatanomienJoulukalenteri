@@ -163,8 +163,6 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 kasittelija.kirjoitaLuukutJsonTiedostoon();
                 Platform.exit();
                 System.exit(0);
-            } else {
-                // ... user chose CANCEL or closed the dialog
             }
 
         });
