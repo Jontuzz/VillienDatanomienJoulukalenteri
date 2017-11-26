@@ -5,7 +5,8 @@
     "avattu" : true,
     "luukunPaivays" : 1509487200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva1.jpg"
   },
   "luukku2" : {
     "nimi" : "luukku2",
@@ -13,55 +14,62 @@
     "avattu" : true,
     "luukunPaivays" : 1509573600000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva2.jpg"
   },
   "luukku3" : {
     "nimi" : "luukku3",
     "numero" : 3,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509660000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva3.jpg"
   },
   "luukku4" : {
     "nimi" : "luukku4",
     "numero" : 4,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509746400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva4.jpg"
   },
   "luukku5" : {
     "nimi" : "luukku5",
     "numero" : 5,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509832800000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva5.jpg"
   },
   "luukku6" : {
     "nimi" : "luukku6",
     "numero" : 6,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1509919200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/Joulukuva6.jpg"
   },
   "luukku7" : {
     "nimi" : "luukku7",
     "numero" : 7,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1510005600000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva7.jpg"
   },
   "luukku8" : {
     "nimi" : "luukku8",
     "numero" : 8,
-    "avattu" : false,
+    "avattu" : true,
     "luukunPaivays" : 1510092000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : "images/joulukuva8.jpg"
   },
   "luukku9" : {
     "nimi" : "luukku9",
@@ -69,7 +77,8 @@
     "avattu" : true,
     "luukunPaivays" : 1510178400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku10" : {
     "nimi" : "luukku10",
@@ -77,15 +86,17 @@
     "avattu" : false,
     "luukunPaivays" : 1510264800000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku11" : {
     "nimi" : "luukku11",
     "numero" : 11,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1510351200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku12" : {
     "nimi" : "luukku12",
@@ -93,7 +104,8 @@
     "avattu" : false,
     "luukunPaivays" : 1510437600000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku13" : {
     "nimi" : "luukku13",
@@ -101,7 +113,8 @@
     "avattu" : false,
     "luukunPaivays" : 1510524000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku14" : {
     "nimi" : "luukku14",
@@ -109,7 +122,8 @@
     "avattu" : false,
     "luukunPaivays" : 1510610400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku15" : {
     "nimi" : "luukku15",
@@ -117,7 +131,8 @@
     "avattu" : false,
     "luukunPaivays" : 1510696800000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku16" : {
     "nimi" : "luukku16",
@@ -125,7 +140,8 @@
     "avattu" : false,
     "luukunPaivays" : 1510783200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku17" : {
     "nimi" : "luukku17",
@@ -133,15 +149,17 @@
     "avattu" : false,
     "luukunPaivays" : 1510869600000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku18" : {
     "nimi" : "luukku18",
     "numero" : 18,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1510956000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku19" : {
     "nimi" : "luukku19",
@@ -149,15 +167,17 @@
     "avattu" : false,
     "luukunPaivays" : 1511042400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku20" : {
     "nimi" : "luukku20",
     "numero" : 20,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1511128800000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku21" : {
     "nimi" : "luukku21",
@@ -165,15 +185,17 @@
     "avattu" : false,
     "luukunPaivays" : 1511215200000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku22" : {
     "nimi" : "luukku22",
     "numero" : 22,
-    "avattu" : true,
+    "avattu" : false,
     "luukunPaivays" : 1511301600000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku23" : {
     "nimi" : "luukku23",
@@ -181,7 +203,8 @@
     "avattu" : false,
     "luukunPaivays" : 1511388000000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   },
   "luukku24" : {
     "nimi" : "luukku24",
@@ -189,6 +212,7 @@
     "avattu" : false,
     "luukunPaivays" : 1511474400000,
     "sisalto" : "Hyvää joulua ja onnellista uutta vuotta!",
-    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"
+    "musiikkiTiedostoPolku" : "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3",
+    "kuva" : ""
   }
 }

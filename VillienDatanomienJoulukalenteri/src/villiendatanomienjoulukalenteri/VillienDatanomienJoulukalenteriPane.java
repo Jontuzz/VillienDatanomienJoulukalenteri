@@ -149,7 +149,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     //Luukkujen avaus metodit loppuu
     @FXML
     private void initialize() {
-
+        
         close.setOnAction((ActionEvent event) -> {
             Platform.exit();
             System.exit(0);
@@ -594,7 +594,8 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
             //Annetaan controllerille luukku olio, jotta uudessa ikkunassa voidaan näyttää luukun sisältöä
             luukkuPane.setLuukku(luukku);
-            luukkuPane.setKuva();
+            System.out.println(luukku.getKuva());
+            luukkuPane.setKuva(luukku.getKuva().toString());
             luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();

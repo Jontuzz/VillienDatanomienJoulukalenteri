@@ -33,14 +33,14 @@ public class LuukkujenKasittelija {
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
          */
         
-        luukkuLista.put("luukku1", new Luukku("luukku1", 1, false, paivayksenHallinta.parseDate("1/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku2", new Luukku("luukku2", 2, false, paivayksenHallinta.parseDate("2/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku3", new Luukku("luukku3", 3, false, paivayksenHallinta.parseDate("3/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku4", new Luukku("luukku4", 4, false, paivayksenHallinta.parseDate("4/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku5", new Luukku("luukku5", 5, false, paivayksenHallinta.parseDate("5/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku6", new Luukku("luukku6", 6, false, paivayksenHallinta.parseDate("6/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku7", new Luukku("luukku7", 7, false, paivayksenHallinta.parseDate("7/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku8", new Luukku("luukku8", 8, false, paivayksenHallinta.parseDate("8/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku1", new Luukku("luukku1", 1, false, paivayksenHallinta.parseDate("1/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva1.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku2", new Luukku("luukku2", 2, false, paivayksenHallinta.parseDate("2/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva2.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku3", new Luukku("luukku3", 3, false, paivayksenHallinta.parseDate("3/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva3.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku4", new Luukku("luukku4", 4, false, paivayksenHallinta.parseDate("4/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva4.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku5", new Luukku("luukku5", 5, false, paivayksenHallinta.parseDate("5/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva5.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku6", new Luukku("luukku6", 6, false, paivayksenHallinta.parseDate("6/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/Joulukuva6.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku7", new Luukku("luukku7", 7, false, paivayksenHallinta.parseDate("7/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva7.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku8", new Luukku("luukku8", 8, false, paivayksenHallinta.parseDate("8/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva8.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku9", new Luukku("luukku9", 9, false, paivayksenHallinta.parseDate("9/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku10", new Luukku("luukku10", 10, false, paivayksenHallinta.parseDate("10/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku11", new Luukku("luukku11", 11, false, paivayksenHallinta.parseDate("11/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));

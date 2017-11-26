@@ -85,8 +85,8 @@ public class AvattuLuukkuPane implements Initializable {
         this.musiikkiTiedosto = new Media(tiedostoPolku);
     }
     
-    public void setKuva() {
-        kuva = new Image("images/Joulukuva6.jpg");
+    public void setKuva(String osoite) {
+        kuva = new Image(osoite);
     }
     
     public void setLuukku(Luukku luukku) {
