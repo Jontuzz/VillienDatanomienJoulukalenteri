@@ -21,6 +21,7 @@ public class VillienDatanomienJoulukalenteri extends Application {
         
         Scene scene = new Scene(root);
         stage.setTitle("Villien Datanomien Joulukalenteri");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
