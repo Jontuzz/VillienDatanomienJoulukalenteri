@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -59,6 +60,21 @@ public class AvattuLuukkuPane implements Initializable {
 
         pvm.setText(paivayksenHallinta.dateAsString(tamaPaiva));
 
+        palaa.setOnAction((ActionEvent event) -> {
+//            try {
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/villiendatanomienjoulukalenteri/VillienDatanomienJoulukalenteriPane.fxml"));
+//
+//            
+//            Parent root = fxmlLoader.load();
+////            this.anchorPane.getChildren().clear();
+////            this.anchorPane.getChildren().add(root);
+//            this.anchorPane.getChildren().setAll(root);
+//
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+        });
+        
     }
 
     public void setLuukku(Luukku luukku) {

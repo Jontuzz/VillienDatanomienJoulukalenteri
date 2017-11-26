@@ -16,7 +16,10 @@ import java.util.LinkedHashMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import tiedostonkasittelypakkaus.Luukku;
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 import paivamaara.Paivays;
@@ -124,7 +127,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     //Luukkujen avaus metodit loppuu
     @FXML
     private void initialize() {
-        
+
         luukku1.setOnAction((ActionEvent event) -> {
             String luukkuNimi = "luukku1";
             if (luukku1.getId().equals("avattu")) {
@@ -500,11 +503,17 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             AvattuLuukkuPane luukkuPane = new AvattuLuukkuPane();
             luukkuPane.setLuukku(luukku);
             fxmlLoader.setController(luukkuPane);
-
             Parent root = fxmlLoader.load();
-            this.anchorPane.getChildren().clear();
-            this.anchorPane.getChildren().add(root);
+
+            Scene luukkuScene = new Scene(root);
+            Stage luukkuStage = new Stage();
             
+            luukkuStage.setTitle("Luukku " + luukku.getNumero() + ". " + paivayksenHallinta.dateAsString(luukku.getLuukunPaivays()));
+            luukkuStage.setScene(luukkuScene);
+            //rajoitetaan, että kun uusi ikkuna on auki ei voida päästä käsiksi pää ikkunaan
+            luukkuStage.initModality(Modality.APPLICATION_MODAL);
+            luukkuStage.show();
+
             return true;
         } catch (IOException ex) {
             ex.printStackTrace();
