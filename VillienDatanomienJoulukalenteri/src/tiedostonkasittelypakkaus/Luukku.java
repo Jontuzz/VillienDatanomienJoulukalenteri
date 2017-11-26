@@ -6,6 +6,7 @@
 package tiedostonkasittelypakkaus;
 
 import java.util.Date;
+import javafx.scene.media.Media;
 /**
  *
  * @author s1601378
@@ -18,13 +19,15 @@ public class Luukku {
     private boolean avattu;
     private Date luukunPaivays;
     private String sisalto;
+    private String musiikkiTiedostoPolku;
   
-    public Luukku(String nimi, int numero, boolean avattu, Date luukunPaivays, String sisalto) {
+    public Luukku(String nimi, int numero, boolean avattu, Date luukunPaivays, String sisalto, String musiikkiTiedostoPolku) {
         this.nimi = nimi;
         this.numero = numero;
         this.avattu = avattu;
         this.luukunPaivays = luukunPaivays;
         this.sisalto = sisalto;
+        this.musiikkiTiedostoPolku = musiikkiTiedostoPolku;
     }
 
     public String getNimi() {
@@ -67,9 +70,17 @@ public class Luukku {
         this.sisalto = sisalto;
     }
 
+    public String getMusiikkiTiedostoPolku() {
+        return musiikkiTiedostoPolku;
+    }
+
+    public void setMusiikkiTiedostoPolku(String musiikkiTiedostoPolku) {
+        this.musiikkiTiedostoPolku = musiikkiTiedostoPolku;
+    }
+
     @Override
     public String toString() {
-        return "Luukku{" + "nimi=" + nimi + ", numero=" + numero + ", avattu=" + avattu + ", luukunPaivays=" + luukunPaivays + ", sisalto=" + sisalto + '}';
+        return "Luukku{" + "nimi=" + nimi + ", numero=" + numero + ", avattu=" + avattu + ", luukunPaivays=" + luukunPaivays + ", sisalto=" + sisalto + ", musiikkiTiedostoPolku=" + musiikkiTiedostoPolku + '}';
     }
 
     public Luukku() {

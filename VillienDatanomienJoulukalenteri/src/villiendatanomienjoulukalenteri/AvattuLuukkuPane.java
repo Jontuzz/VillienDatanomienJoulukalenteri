@@ -56,8 +56,6 @@ public class AvattuLuukkuPane implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        musiikkiTiedosto = new Media("file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3");
-        
         mediaPlayer = new MediaPlayer(musiikkiTiedosto);
         mediaPlayer.setAutoPlay(true);
         
@@ -75,6 +73,10 @@ public class AvattuLuukkuPane implements Initializable {
 
     }
 
+    public void setMusiikkiTiedosto(String tiedostoPolku) {
+        this.musiikkiTiedosto = new Media(tiedostoPolku);
+    }
+    
     public void setLuukku(Luukku luukku) {
         this.luukku = luukku;
     }

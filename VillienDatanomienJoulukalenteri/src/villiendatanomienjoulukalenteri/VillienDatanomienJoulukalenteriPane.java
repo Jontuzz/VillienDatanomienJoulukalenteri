@@ -152,7 +152,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             System.exit(0);
         });
 
-        alustaLuukut.setOnAction((ActionEvent event) -> {            
+        alustaLuukut.setOnAction((ActionEvent event) -> {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Alusta luukut");
             alert.setHeaderText("Jos painat ok, luukut alustetaan alkuperäisiin asetuksiin ja ohjelma tulee käynnistää uudelleen!");
@@ -560,30 +560,25 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         buttonit.add(luukku22);
         buttonit.add(luukku23);
         buttonit.add(luukku24);
-        //tarkistetaan onko tiedostoa "JouluKalenteriLuukut.json" olemassa
-        File JouluKalenteriLuukutJson = new File("JouluKalenteriLuukut.json");
-        if (JouluKalenteriLuukutJson.exists()) {
-            System.out.println("Luukut on jo json tiedostossa!");
 
-            //luetaan luukut .json tiedostosta listaan
-            luukkuLista = kasittelija.lueJsonListaan();
-            System.out.println(kasittelija.lueJsonListaan());
+        //luetaan luukut .json tiedostosta listaan
+        luukkuLista = kasittelija.lueJsonListaan();
+        System.out.println(kasittelija.lueJsonListaan());
 
-            //käydään nappien lista läpi
-            for (Button button : buttonit) {
+        //käydään nappien lista läpi
+        for (Button button : buttonit) {
 
-                Luukku luukku = luukkuLista.get(button.getId());
+            Luukku luukku = luukkuLista.get(button.getId());
 
-                if (button.getId().equals(luukku.getNimi()) && luukku.isAvattu()) {
-                    //Luukun päivämäärä ennen nykyistä päivää tai luukun päivä on sama kuin nykyinen päivä
-                    button.setId("avattu");
-                } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
-                    //Luukun päivämäärä ennen nykyistä päivämäärää tai sama kuin nykyinen päivämäärä
-                    button.setId("ei-avattu");
-                } else {
-                    //Luukun päivämäärä on nykyisen päivämäärän jälkeen
-                    button.setId("ei-voida-avata");
-                }
+            if (button.getId().equals(luukku.getNimi()) && luukku.isAvattu()) {
+                //Luukun päivämäärä ennen nykyistä päivää tai luukun päivä on sama kuin nykyinen päivä
+                button.setId("avattu");
+            } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
+                //Luukun päivämäärä ennen nykyistä päivämäärää tai sama kuin nykyinen päivämäärä
+                button.setId("ei-avattu");
+            } else {
+                //Luukun päivämäärä on nykyisen päivämäärän jälkeen
+                button.setId("ei-voida-avata");
             }
         }
     }
@@ -598,12 +593,12 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
             //Annetaan controllerille luukku olio, jotta uudessa ikkunassa voidaan näyttää luukun sisältöä
             luukkuPane.setLuukku(luukku);
+            luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();
 
             Scene luukkuScene = new Scene(root);
             Stage luukkuStage = new Stage();
-            
 
             //uuden ikkunan Title
             luukkuStage.setTitle("Luukku " + luukku.getNumero() + ". " + paivayksenHallinta.dateAsString(luukku.getLuukunPaivays()));
