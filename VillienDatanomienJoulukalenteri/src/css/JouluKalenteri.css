@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 .root {
-    -fx-background-image:url('file:winter.jpg');
+    -fx-background-image:url('winter.jpg');
     -fx-background-repeat: no-repeat;
 }
 

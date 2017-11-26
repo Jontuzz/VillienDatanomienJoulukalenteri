@@ -11,7 +11,7 @@
 
 <fx:root id="AnchorPane" fx:id="anchorPane" prefHeight="540.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@JouluKalenteri.css" />
+        <URL value="@../css/JouluKalenteri.css" />
     </stylesheets>
     <children>
         <Button fx:id="luukku1" layoutX="837.0" layoutY="451.0" text="1">
@@ -206,24 +206,24 @@
                 <Bloom />
             </effect>
         </Button>
-      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem fx:id="alustaLuukut" mnemonicParsing="false" text="Alusta Luukut" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem fx:id="ohjeet" mnemonicParsing="false" text="Ohjeet" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+        <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="alustaLuukut" mnemonicParsing="false" text="Alusta Luukut" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem fx:id="ohjeet" mnemonicParsing="false" text="Ohjeet" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
     </children>
 </fx:root>

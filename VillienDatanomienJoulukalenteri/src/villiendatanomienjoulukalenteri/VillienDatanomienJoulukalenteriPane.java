@@ -588,7 +588,6 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                     button.setId("ei-voida-avata");
                 }
             }
-            System.out.println(kasittelija.lueJsonListaan());
         }
     }
 
@@ -603,7 +602,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             //Annetaan controllerille luukku olio, jotta uudessa ikkunassa voidaan näyttää luukun sisältöä
             luukkuPane.setLuukku(luukku);
             System.out.println(luukku.getKuva());
-            luukkuPane.setKuva(luukku.getKuva().toString());
+            luukkuPane.setKuva(luukku.getKuva());
             luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();
