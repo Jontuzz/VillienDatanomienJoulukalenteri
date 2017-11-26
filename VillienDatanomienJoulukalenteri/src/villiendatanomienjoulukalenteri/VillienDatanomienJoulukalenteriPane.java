@@ -62,6 +62,8 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     //Luodaan paivayksenHallinta olio, jotta Date objekti voidaan muuttaa muotoon "1/11/2017" ja String tyyppiseksi
     private Paivays paivayksenHallinta = new Paivays();
 
+    private final File userDesktop = new File(System.getProperty("user.home"), "/Desktop/MarraskuuTesti.json");
+
     @FXML
     private AnchorPane anchorPane;
 
@@ -70,7 +72,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
     @FXML
     private MenuItem alustaLuukut;
-    
+
     @FXML
     private MenuItem ohjeet;
 
@@ -149,440 +151,445 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
     //Luukkujen avaus metodit loppuu
     @FXML
     private void initialize() {
-        
-        close.setOnAction((ActionEvent event) -> {
-            Platform.exit();
-            System.exit(0);
-        });
 
-        alustaLuukut.setOnAction((ActionEvent event) -> {
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Alusta luukut");
-            alert.setHeaderText("Jos painat ok, luukut alustetaan alkuperäisiin asetuksiin ja ohjelma tulee käynnistää uudelleen!");
-            alert.setContentText("Haluatko varmasti alustaa luukut?");
+        if (!userDesktop.exists()) {
+            kasittelija.kirjoitaLuukutJsonTiedostoon();
+        } else {
 
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                kasittelija.kirjoitaLuukutJsonTiedostoon();
+            close.setOnAction((ActionEvent event) -> {
                 Platform.exit();
                 System.exit(0);
-            }
+            });
 
-        });
+            alustaLuukut.setOnAction((ActionEvent event) -> {
+                Alert alert = new Alert(AlertType.CONFIRMATION);
+                alert.setTitle("Alusta luukut");
+                alert.setHeaderText("Jos painat ok, luukut alustetaan alkuperäisiin asetuksiin ja ohjelma tulee käynnistää uudelleen!");
+                alert.setContentText("Haluatko varmasti alustaa luukut?");
 
-        luukku1.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku1";
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK) {
+                    kasittelija.kirjoitaLuukutJsonTiedostoon();
+                    Platform.exit();
+                    System.exit(0);
+                }
 
-            if (luukku1.getId().equals("avattu")) {
+            });
+
+            luukku1.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku1";
+
+                if (luukku1.getId().equals("avattu")) {
+                    //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku1.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku2.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku2";
+                if (luukku2.getId().equals("avattu")) {
+                    //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku2.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku3.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku3";
                 //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku1.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
+                if (luukku3.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku3.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku4.setOnAction((ActionEvent event) -> {
+
+                String luukkuNimi = "luukku4";
+                if (luukku4.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku4.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku5.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku5";
+                if (luukku5.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku5.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku6.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku6";
+                if (luukku6.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku6.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku7.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku7";
+                if (luukku7.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku7.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku8.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku8";
+                if (luukku8.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku8.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku9.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku9";
+                if (luukku9.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku9.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku10.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku10";
+                if (luukku10.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku10.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku11.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku11";
+                if (luukku11.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku11.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku12.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku12";
+                if (luukku12.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku12.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku13.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku13";
+                if (luukku13.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku13.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku14.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku14";
+                if (luukku14.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku14.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku15.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku15";
+                if (luukku15.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku15.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku16.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku16";
+                if (luukku16.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku16.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku17.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku17";
+                if (luukku17.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku17.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku18.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku18";
+                if (luukku18.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku18.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku19.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku19";
+                if (luukku19.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku19.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku20.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku20";
+                if (luukku20.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku20.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku21.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku21";
+                if (luukku21.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku21.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku22.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku22";
+                if (luukku22.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku22.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku23.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku23";
+                if (luukku23.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku23.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            luukku24.setOnAction((ActionEvent event) -> {
+                String luukkuNimi = "luukku24";
+                if (luukku24.getId().equals("avattu")) {
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                } else if (kasittelija.avaaLuukku(luukkuNimi)) {
+                    //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
+                    avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
+                    //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
+                    luukku24.setId("avattu");
+                } else {
+                    //Jos luukkua ei voi vielä avata
+                    System.out.println("Ei voida avata");
+                }
+            });
+
+            //Tarkista täällä mitkä luukut on avattu ja mitkä ei
+            //lisätään napit listaan, jotta voidaan muuttaa nappien outline css tiedoston ja napin id:n avulla
+            buttonit.add(luukku1);
+            buttonit.add(luukku2);
+            buttonit.add(luukku3);
+            buttonit.add(luukku4);
+            buttonit.add(luukku5);
+            buttonit.add(luukku6);
+            buttonit.add(luukku7);
+            buttonit.add(luukku8);
+            buttonit.add(luukku9);
+            buttonit.add(luukku10);
+            buttonit.add(luukku11);
+            buttonit.add(luukku12);
+            buttonit.add(luukku13);
+            buttonit.add(luukku14);
+            buttonit.add(luukku15);
+            buttonit.add(luukku16);
+            buttonit.add(luukku17);
+            buttonit.add(luukku18);
+            buttonit.add(luukku19);
+            buttonit.add(luukku20);
+            buttonit.add(luukku21);
+            buttonit.add(luukku22);
+            buttonit.add(luukku23);
+            buttonit.add(luukku24);
+
+            //luetaan luukut .json tiedostosta listaan
+            luukkuLista = kasittelija.lueJsonListaan();
+            System.out.println(kasittelija.lueJsonListaan());
+
+            //käydään nappien lista läpi
+            for (Button button : buttonit) {
+
+                Luukku luukku = luukkuLista.get(button.getId());
+
+                if (button.getId().equals(luukku.getNimi()) && luukku.isAvattu()) {
+                    //Luukun päivämäärä ennen nykyistä päivää tai luukun päivä on sama kuin nykyinen päivä
+                    button.setId("avattu");
+                } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
+                    //Luukun päivämäärä ennen nykyistä päivämäärää tai sama kuin nykyinen päivämäärä
+                    button.setId("ei-avattu");
+                } else {
+                    //Luukun päivämäärä on nykyisen päivämäärän jälkeen
+                    button.setId("ei-voida-avata");
+                }
             }
-        });
-
-        luukku2.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku2";
-            if (luukku2.getId().equals("avattu")) {
-                //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku2.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku3.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku3";
-            //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
-            if (luukku3.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku3.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku4.setOnAction((ActionEvent event) -> {
-
-            String luukkuNimi = "luukku4";
-            if (luukku4.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku4.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku5.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku5";
-            if (luukku5.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku5.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku6.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku6";
-            if (luukku6.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku6.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku7.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku7";
-            if (luukku7.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku7.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku8.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku8";
-            if (luukku8.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku8.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku9.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku9";
-            if (luukku9.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku9.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku10.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku10";
-            if (luukku10.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku10.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku11.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku11";
-            if (luukku11.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku11.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku12.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku12";
-            if (luukku12.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku12.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku13.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku13";
-            if (luukku13.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku13.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku14.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku14";
-            if (luukku14.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku14.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku15.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku15";
-            if (luukku15.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku15.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku16.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku16";
-            if (luukku16.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku16.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku17.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku17";
-            if (luukku17.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku17.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku18.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku18";
-            if (luukku18.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku18.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku19.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku19";
-            if (luukku19.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku19.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku20.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku20";
-            if (luukku20.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku20.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku21.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku21";
-            if (luukku21.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku21.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku22.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku22";
-            if (luukku22.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku22.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku23.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku23";
-            if (luukku23.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku23.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        luukku24.setOnAction((ActionEvent event) -> {
-            String luukkuNimi = "luukku24";
-            if (luukku24.getId().equals("avattu")) {
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-            } else if (kasittelija.avaaLuukku(luukkuNimi)) {
-                //kirjoitetaan luukun muutokset .json tiedostoon ja avataan luukku uudessa ikkunassa
-                avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
-                //vaihdetaan id:ksi "avattu" jotta css tiedosto vaihtaa sen värin
-                luukku24.setId("avattu");
-            } else {
-                //Jos luukkua ei voi vielä avata
-                System.out.println("Ei voida avata");
-            }
-        });
-
-        //Tarkista täällä mitkä luukut on avattu ja mitkä ei
-        //lisätään napit listaan, jotta voidaan muuttaa nappien outline css tiedoston ja napin id:n avulla
-        buttonit.add(luukku1);
-        buttonit.add(luukku2);
-        buttonit.add(luukku3);
-        buttonit.add(luukku4);
-        buttonit.add(luukku5);
-        buttonit.add(luukku6);
-        buttonit.add(luukku7);
-        buttonit.add(luukku8);
-        buttonit.add(luukku9);
-        buttonit.add(luukku10);
-        buttonit.add(luukku11);
-        buttonit.add(luukku12);
-        buttonit.add(luukku13);
-        buttonit.add(luukku14);
-        buttonit.add(luukku15);
-        buttonit.add(luukku16);
-        buttonit.add(luukku17);
-        buttonit.add(luukku18);
-        buttonit.add(luukku19);
-        buttonit.add(luukku20);
-        buttonit.add(luukku21);
-        buttonit.add(luukku22);
-        buttonit.add(luukku23);
-        buttonit.add(luukku24);
-
-        //luetaan luukut .json tiedostosta listaan
-        luukkuLista = kasittelija.lueJsonListaan();
-        System.out.println(kasittelija.lueJsonListaan());
-
-        //käydään nappien lista läpi
-        for (Button button : buttonit) {
-
-            Luukku luukku = luukkuLista.get(button.getId());
-
-            if (button.getId().equals(luukku.getNimi()) && luukku.isAvattu()) {
-                //Luukun päivämäärä ennen nykyistä päivää tai luukun päivä on sama kuin nykyinen päivä
-                button.setId("avattu");
-            } else if (button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().before(nykyinenPaiva) || button.getId().equals(luukku.getNimi()) && luukku.getLuukunPaivays().equals(nykyinenPaiva)) {
-                //Luukun päivämäärä ennen nykyistä päivämäärää tai sama kuin nykyinen päivämäärä
-                button.setId("ei-avattu");
-            } else {
-                //Luukun päivämäärä on nykyisen päivämäärän jälkeen
-                button.setId("ei-voida-avata");
-            }
+            System.out.println(kasittelija.lueJsonListaan());
         }
-System.out.println(kasittelija.lueJsonListaan());
     }
 
     public boolean avaaLuukkuWindow(Luukku luukku) {

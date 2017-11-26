@@ -24,15 +24,17 @@ public class LuukkujenKasittelija {
     //paivayksenHallinnan avulla muutetaan String tyyppinen päiväys Date objektiksi
     Paivays paivayksenHallinta = new Paivays();
 
+    private final File userDesktop = new File(System.getProperty("user.home"), "/Desktop");;
+    
     public LuukkujenKasittelija() {
-        luukkuLista  = new LinkedHashMap<>();
+        luukkuLista = new LinkedHashMap<>();
     }
 
     public boolean kirjoitaLuukutJsonTiedostoon() {
         /*Jos tiedostoa ei löydy tai tiedostoa on muokattu siten, että sen lukeminen aiheuttaa virheen
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
          */
-        
+
         luukkuLista.put("luukku1", new Luukku("luukku1", 1, false, paivayksenHallinta.parseDate("1/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva1.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku2", new Luukku("luukku2", 2, false, paivayksenHallinta.parseDate("2/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva2.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku3", new Luukku("luukku3", 3, false, paivayksenHallinta.parseDate("3/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva3.jpg", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
@@ -54,10 +56,10 @@ public class LuukkujenKasittelija {
         luukkuLista.put("luukku19", new Luukku("luukku19", 19, false, paivayksenHallinta.parseDate("19/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku20", new Luukku("luukku20", 20, false, paivayksenHallinta.parseDate("20/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku21", new Luukku("luukku21", 21, false, paivayksenHallinta.parseDate("21/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-        luukkuLista.put("luukku22", new Luukku("luukku22", 22, false, paivayksenHallinta.parseDate("22/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "",  "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
+        luukkuLista.put("luukku22", new Luukku("luukku22", 22, false, paivayksenHallinta.parseDate("22/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku23", new Luukku("luukku23", 23, false, paivayksenHallinta.parseDate("23/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
         luukkuLista.put("luukku24", new Luukku("luukku24", 24, false, paivayksenHallinta.parseDate("24/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "", "file:///C:/Users/s1601378/Downloads/MELANKOLIA.mp3"));
-                
+
         try {
 //            for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
 //                //lisätään jokainen luukku LinkedHashMappiin
@@ -69,8 +71,10 @@ public class LuukkujenKasittelija {
             //DefaultPrettyPrinter määrittää, että Java oliot eivät tule yhteen pötköön json tiedostoon
             ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
+            
+            
             //kirjoitetaan lista .json tiedostoon
-            writer.writeValue(new File("MarraskuuTesti.json"), luukkuLista);
+            writer.writeValue(new File(userDesktop, "MarraskuuTesti.json"), luukkuLista);
             return true;
 
         } catch (JsonGenerationException e) {
@@ -89,7 +93,7 @@ public class LuukkujenKasittelija {
         LinkedHashMap<String, Luukku> result = null;
         //Kokeillaan lukea json tiedostossa olevat luukut LinkedHashMappiin
         try {
-            result = mapper.readValue(new File("MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>() {
+            result = mapper.readValue(new File(userDesktop, "MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>() {
             });
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -117,7 +121,7 @@ public class LuukkujenKasittelija {
     public boolean avaaLuukku(String luukunNimi) {
         //metodi, joka joka muuttaa luukun tietoja .json tiedostossa, kun se avataan ensimmäistä kertaa
         luukkuLista = lueJsonListaan();
-        
+
         System.out.println("LuukkuLista: " + luukkuLista);
 
         if (voikoLuukunAvata(luukunNimi)) {
@@ -131,9 +135,9 @@ public class LuukkujenKasittelija {
 
                 //DefaultPrettyPrinter määrittää, että Java oliot eivät tule yhteen pötköön json tiedostoon
                 ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-                
+
                 //kirjoitetaan uusi lista uudestaan tiedostoon
-                writer.writeValue(new File("MarraskuuTesti.json"), luukkuLista);
+                writer.writeValue(new File(userDesktop, "MarraskuuTesti.json"), luukkuLista);
                 System.out.println("Tehty: " + luukkuLista);
                 return true;
 
