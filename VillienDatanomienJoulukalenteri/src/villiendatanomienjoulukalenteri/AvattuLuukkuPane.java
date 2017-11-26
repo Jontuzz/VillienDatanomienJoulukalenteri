@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -36,6 +38,7 @@ public class AvattuLuukkuPane implements Initializable {
 
     private MediaPlayer mediaPlayer;
     private Media musiikkiTiedosto;
+    private Image kuva;
     
     @FXML
     private Label pvm;
@@ -48,6 +51,9 @@ public class AvattuLuukkuPane implements Initializable {
 
     @FXML
     private Button palaa;
+    
+    @FXML
+    private ImageView imageView;
 
     /**
      * Initializes the controller class.
@@ -58,6 +64,8 @@ public class AvattuLuukkuPane implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         mediaPlayer = new MediaPlayer(musiikkiTiedosto);
         mediaPlayer.setAutoPlay(true);
+        
+        imageView.setImage(kuva);
         
         System.out.println(luukku);
         luukkusisalto.setText(luukku.getSisalto());
@@ -75,6 +83,10 @@ public class AvattuLuukkuPane implements Initializable {
 
     public void setMusiikkiTiedosto(String tiedostoPolku) {
         this.musiikkiTiedosto = new Media(tiedostoPolku);
+    }
+    
+    public void setKuva() {
+        kuva = new Image("images/Joulukuva6.jpg");
     }
     
     public void setLuukku(Luukku luukku) {

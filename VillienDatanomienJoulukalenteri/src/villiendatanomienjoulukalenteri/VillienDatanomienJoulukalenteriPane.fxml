@@ -206,7 +206,7 @@
                 <Bloom />
             </effect>
         </Button>
-      <MenuBar prefHeight="25.0" prefWidth="960.0" AnchorPane.bottomAnchor="516.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -220,7 +220,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="Ohjeet" />
+              <MenuItem fx:id="ohjeet" mnemonicParsing="false" text="Ohjeet" />
             </items>
           </Menu>
         </menus>

@@ -20,13 +20,15 @@ public class Luukku {
     private Date luukunPaivays;
     private String sisalto;
     private String musiikkiTiedostoPolku;
+    private String kuva;
   
-    public Luukku(String nimi, int numero, boolean avattu, Date luukunPaivays, String sisalto, String musiikkiTiedostoPolku) {
+    public Luukku(String nimi, int numero, boolean avattu, Date luukunPaivays, String sisalto, String kuva, String musiikkiTiedostoPolku) {
         this.nimi = nimi;
         this.numero = numero;
         this.avattu = avattu;
         this.luukunPaivays = luukunPaivays;
         this.sisalto = sisalto;
+        this.kuva = kuva;
         this.musiikkiTiedostoPolku = musiikkiTiedostoPolku;
     }
 
@@ -70,6 +72,14 @@ public class Luukku {
         this.sisalto = sisalto;
     }
 
+    public String getKuva() {
+        return kuva;
+    }
+
+    public void setKuva(String kuva) {
+        this.kuva = kuva;
+    }
+    
     public String getMusiikkiTiedostoPolku() {
         return musiikkiTiedostoPolku;
     }

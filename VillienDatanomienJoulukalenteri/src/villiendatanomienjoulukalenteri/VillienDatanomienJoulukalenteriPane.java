@@ -70,6 +70,9 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
     @FXML
     private MenuItem alustaLuukut;
+    
+    @FXML
+    private MenuItem ohjeet;
 
     @FXML
     private Button luukku1;
@@ -591,6 +594,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
             //Annetaan controllerille luukku olio, jotta uudessa ikkunassa voidaan näyttää luukun sisältöä
             luukkuPane.setLuukku(luukku);
+            luukkuPane.setKuva();
             luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();
