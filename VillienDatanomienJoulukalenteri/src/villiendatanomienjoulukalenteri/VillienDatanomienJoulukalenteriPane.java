@@ -582,6 +582,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 button.setId("ei-voida-avata");
             }
         }
+System.out.println(kasittelija.lueJsonListaan());
     }
 
     public boolean avaaLuukkuWindow(Luukku luukku) {
