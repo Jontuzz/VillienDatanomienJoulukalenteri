@@ -82,7 +82,7 @@ public class AvattuLuukkuPane implements Initializable {
     }
 
     public void setMusiikkiTiedosto(String tiedostoPolku) {
-        this.musiikkiTiedosto = new Media(tiedostoPolku);
+        this.musiikkiTiedosto = new Media(getClass().getClassLoader().getResource(tiedostoPolku).toExternalForm());
     }
     
     public void setKuva(String osoite) {
