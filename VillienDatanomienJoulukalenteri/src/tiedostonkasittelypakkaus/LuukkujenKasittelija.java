@@ -32,7 +32,7 @@ public class LuukkujenKasittelija {
         /*Jos tiedostoa ei löydy tai tiedostoa on muokattu siten, että sen lukeminen aiheuttaa virheen
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
          */
-        
+                
         try {
             for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
                 //lisätään jokainen luukku LinkedHashMappiin
