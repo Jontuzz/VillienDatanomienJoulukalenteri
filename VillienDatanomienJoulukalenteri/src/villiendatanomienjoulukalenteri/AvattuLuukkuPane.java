@@ -39,36 +39,33 @@ public class AvattuLuukkuPane implements Initializable {
     private MediaPlayer mediaPlayer;
     private Media musiikkiTiedosto;
     private Image kuva;
-    
-    @FXML
-    private Label pvm;
 
     @FXML
-    private TextArea luukkusisalto;
+    private Label pvm;
 
     @FXML
     private Label luukunNumero;
 
     @FXML
-    private Button palaa;
-    
-    @FXML
     private ImageView imageView;
+
+    @FXML
+    private Button palaa;
 
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         mediaPlayer = new MediaPlayer(musiikkiTiedosto);
         mediaPlayer.setAutoPlay(true);
         imageView.setImage(kuva);
-        
+
         System.out.println(luukku);
-        luukkusisalto.setText(luukku.getSisalto());
         luukunNumero.setText("Luukku " + Integer.toString(luukku.getNumero()));
 
         pvm.setText(paivayksenHallinta.dateAsString(tamaPaiva));
@@ -80,15 +77,15 @@ public class AvattuLuukkuPane implements Initializable {
         });
 
     }
-    
-    public void setKuva(String osoite) {
-        kuva = new Image(osoite);
-    }
-    
+
     public void setLuukku(Luukku luukku) {
         this.luukku = luukku;
     }
-    
+
+    public void setKuva(String osoite) {
+        kuva = new Image(osoite);
+    }
+
     public void setMusiikkiTiedosto(String tiedostoNimi) {
         this.musiikkiTiedosto = new Media(getClass().getResource(tiedostoNimi).toExternalForm());
     }

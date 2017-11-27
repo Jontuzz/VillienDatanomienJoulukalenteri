@@ -28,7 +28,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import tiedostonkasittelypakkaus.Luukku;
 import tiedostonkasittelypakkaus.LuukkujenKasittelija;
 import paivamaara.Paivays;
@@ -616,8 +615,10 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             Parent root = fxmlLoader.load();
 
             Scene luukkuScene = new Scene(root);
+            
             Stage luukkuStage = new Stage();
-
+            
+            
             //uuden ikkunan Title
             luukkuStage.setTitle("Luukku " + luukku.getNumero() + ". " + paivayksenHallinta.dateAsString(luukku.getLuukunPaivays()));
             luukkuStage.setScene(luukkuScene);
