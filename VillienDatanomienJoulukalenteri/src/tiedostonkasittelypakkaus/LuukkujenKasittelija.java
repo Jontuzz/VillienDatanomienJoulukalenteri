@@ -61,10 +61,6 @@ public class LuukkujenKasittelija {
         luukkuLista.put("luukku24", new Luukku("luukku24", 24, false, paivayksenHallinta.parseDate("24/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/joulukuva1.jpg", "/musicfiles/WhamLastChristmas.mp3"));
 
         try {
-//            for (int luukkuNro = 1; luukkuNro <= 24; luukkuNro++) {
-//                //lisätään jokainen luukku LinkedHashMappiin
-//                luukkuLista.put("luukku" + luukkuNro, new Luukku("luukku" + luukkuNro, luukkuNro, false, paivayksenHallinta.parseDate(luukkuNro + "/11/2017"), "Hyvää Joulua!"));
-//            }
 
             ObjectMapper mapper = new ObjectMapper();
 
