@@ -611,6 +611,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
             System.out.println(luukku.getKuva());
             luukkuPane.setKuva(luukku.getKuva());
             luukkuPane.setMusiikkiTiedosto(luukku.getMusiikkiTiedostoPolku());
+            System.out.println(luukku.getMusiikkiTiedostoPolku());
             fxmlLoader.setController(luukkuPane);
             Parent root = fxmlLoader.load();
 

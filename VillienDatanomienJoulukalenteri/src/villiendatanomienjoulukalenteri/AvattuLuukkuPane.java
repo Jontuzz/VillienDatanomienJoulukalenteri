@@ -62,9 +62,9 @@ public class AvattuLuukkuPane implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         mediaPlayer = new MediaPlayer(musiikkiTiedosto);
         mediaPlayer.setAutoPlay(true);
-        
         imageView.setImage(kuva);
         
         System.out.println(luukku);
