@@ -24,7 +24,7 @@ public class LuukkujenKasittelija {
     //paivayksenHallinnan avulla muutetaan String tyyppinen päiväys Date objektiksi
     Paivays paivayksenHallinta = new Paivays();
 
-    private final File userDesktop = new File(System.getProperty("user.home"), "/Desktop");;
+    private final File userDesktop = new File(System.getProperty("user.home"), "/Desktop");
     
     public LuukkujenKasittelija() {
         luukkuLista = new LinkedHashMap<>();
@@ -70,7 +70,7 @@ public class LuukkujenKasittelija {
             
             
             //kirjoitetaan lista .json tiedostoon
-            writer.writeValue(new File(userDesktop, "MarraskuuTesti.json"), luukkuLista);
+            writer.writeValue(new File(userDesktop, "JouluKalenteriLuukut.json"), luukkuLista);
             return true;
 
         } catch (JsonGenerationException e) {
@@ -89,7 +89,7 @@ public class LuukkujenKasittelija {
         LinkedHashMap<String, Luukku> result = null;
         //Kokeillaan lukea json tiedostossa olevat luukut LinkedHashMappiin
         try {
-            result = mapper.readValue(new File(userDesktop, "MarraskuuTesti.json"), new TypeReference<Map<String, Luukku>>() {
+            result = mapper.readValue(new File(userDesktop, "JouluKalenteriLuukut.json"), new TypeReference<Map<String, Luukku>>() {
             });
         } catch (JsonGenerationException e) {
             e.printStackTrace();
@@ -133,7 +133,7 @@ public class LuukkujenKasittelija {
                 ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
                 //kirjoitetaan uusi lista uudestaan tiedostoon
-                writer.writeValue(new File(userDesktop, "MarraskuuTesti.json"), luukkuLista);
+                writer.writeValue(new File(userDesktop, "JouluKalenteriLuukut.json"), luukkuLista);
                 System.out.println("Tehty: " + luukkuLista);
                 return true;
 
