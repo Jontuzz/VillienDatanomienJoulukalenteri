@@ -35,7 +35,7 @@ public class LuukkujenKasittelija {
             voidaan ajaa tämä metodi, joka alustaa luukut uudestaan
          */
 
-        luukkuLista.put("luukku1", new Luukku("luukku1", 1, false, paivayksenHallinta.parseDate("1/11/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/luukku1_kuva.jpg", "/musicfiles/WhamLastChristmas.mp3"));
+        luukkuLista.put("luukku1", new Luukku("luukku1", 1, false, paivayksenHallinta.parseDate("1/12/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/luukku1_kuva.jpg", "/musicfiles/WhamLastChristmas.mp3"));
         luukkuLista.put("luukku2", new Luukku("luukku2", 2, false, paivayksenHallinta.parseDate("2/12/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/luukku2_kuva.jpg", "/musicfiles/WhamLastChristmas.mp3"));
         luukkuLista.put("luukku3", new Luukku("luukku3", 3, false, paivayksenHallinta.parseDate("3/12/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/luukku3_kuva.jpg", "/musicfiles/WhamLastChristmas.mp3"));
         luukkuLista.put("luukku4", new Luukku("luukku4", 4, false, paivayksenHallinta.parseDate("4/12/2017"), "Hyvää joulua ja onnellista uutta vuotta!", "images/luukku4_kuva.jpg", "/musicfiles/WhamLastChristmas.mp3"));
