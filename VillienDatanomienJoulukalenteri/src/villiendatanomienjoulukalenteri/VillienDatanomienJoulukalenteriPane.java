@@ -181,7 +181,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
 
         luukku1.setOnAction((ActionEvent event) -> {
             String luukkuNimi = "luukku1";
-
+            System.out.println(luukkuLista.get(luukkuNimi).getLuukunPaivays());
             if (luukku1.getId().equals("avattu")) {
                 //Jos luukun id on "avattu", kutsutaan metodia, joka avaa luukun uudessa ikkunassa
                 avaaLuukkuWindow(luukkuLista.get(luukkuNimi));
