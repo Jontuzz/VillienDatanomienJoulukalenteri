@@ -13,6 +13,7 @@ tomcat
 *.dmg
 *.gz
 *.iso
+*.jar
 *.rar
 *.tar
 *.zip
@@ -53,7 +54,3 @@ nb-configuration.xml
 release.properties
 pom.xml.releaseBackup
 pom.xml.tag
-/WebView/nbproject/private/
-/Lambada/nbproject/private/
-/DateEsim/nbproject/private/
-/JavaFXBindingTest/nbproject/private/

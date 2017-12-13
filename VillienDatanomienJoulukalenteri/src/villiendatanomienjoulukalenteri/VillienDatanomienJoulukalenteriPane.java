@@ -550,7 +550,6 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
                 System.out.println("Ei voida avata");
             }
         });
-
         //Tarkista täällä mitkä luukut on avattu ja mitkä ei
         //lisätään napit listaan, jotta voidaan muuttaa nappien outline css tiedoston ja napin id:n avulla
         buttonit.add(luukku1);
@@ -581,7 +580,7 @@ public class VillienDatanomienJoulukalenteriPane extends AnchorPane {
         //luetaan luukut .json tiedostosta listaan
         luukkuLista = kasittelija.lueJsonListaan();
         System.out.println(kasittelija.lueJsonListaan());
-
+        System.out.println("Luukku1;;;: " + luukkuLista.get("luukku1"));
         //käydään nappien lista läpi
         for (Button button : buttonit) {
 
